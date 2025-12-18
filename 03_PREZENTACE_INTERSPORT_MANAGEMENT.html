@@ -172,6 +172,7 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 0 60px rgba(0,0,0,0.3);
+            overflow-x: hidden;
         }
 
         .slide-header {
@@ -210,6 +211,8 @@
             padding: 40px 50px;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         .slide-footer {
@@ -1022,6 +1025,27 @@
             .category-segment {
                 padding: 10px;
                 width: 100% !important;
+            }
+        }
+
+        /* Global overflow fix for mobile */
+        @media (max-width: 768px) {
+            * {
+                max-width: 100%;
+            }
+
+            .slide, .slide-inner, .slide-content, .slide-header, .slide-footer {
+                overflow-x: hidden !important;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            p, h1, h2, h3, h4, h5, li, span, strong {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
             }
         }
 
