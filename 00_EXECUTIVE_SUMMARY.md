@@ -97,10 +97,14 @@
 
 ## Kontakt
 
+**Karolína Calda**
+Sales Manager
+
 **VITAR Sport, s.r.o.**
-třída T. Bati 385, 763 02 Zlín
+Exkluzivní distributor ENERVIT pro ČR a SR
+
 Tel: +420 724 963 739
-E-mail: calda.karolina@vitarsport.cz
+E-mail: calda.karolina@enervit.cz
 Web: www.enervit.cz
 
 ---
