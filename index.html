@@ -759,6 +759,277 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .nav-bar {
+                padding: 8px 10px;
+                gap: 4px;
+            }
+
+            .nav-dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .nav-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+                margin: 0 5px;
+            }
+
+            .slide-counter {
+                font-size: 0.75rem;
+                padding: 3px 8px;
+                margin-left: 8px;
+            }
+
+            .keyboard-hint {
+                display: none;
+            }
+
+            .slide-header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .slide-header h2 {
+                font-size: 1.3rem;
+            }
+
+            .slide-header .logos {
+                gap: 10px;
+            }
+
+            .logo-img {
+                height: 28px;
+                padding: 5px 10px;
+            }
+
+            .slide-content {
+                padding: 20px;
+            }
+
+            .slide-footer {
+                padding: 10px 20px;
+                font-size: 0.75rem;
+                flex-wrap: wrap;
+                gap: 5px;
+                justify-content: center;
+            }
+
+            .slide-number {
+                width: 24px;
+                height: 24px;
+                font-size: 0.8rem;
+            }
+
+            /* Cover slide mobile */
+            .cover-slide {
+                padding: 30px 20px;
+            }
+
+            .cover-slide .main-logo {
+                height: 50px;
+                padding: 10px 20px;
+            }
+
+            .cover-slide .tagline {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .cover-slide h1 {
+                font-size: 1.5rem;
+            }
+
+            .cover-slide .subtitle {
+                font-size: 1rem;
+            }
+
+            .cover-slide .partner-logos {
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 30px;
+            }
+
+            .cover-slide .plus {
+                font-size: 1.5rem;
+            }
+
+            /* Grid layouts mobile */
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .product-item {
+                padding: 12px;
+            }
+
+            .product-item .product-img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .product-item h5 {
+                font-size: 0.75rem;
+            }
+
+            .product-item .price {
+                font-size: 0.8rem;
+            }
+
+            .product-item .line-tag {
+                font-size: 0.6rem;
+                padding: 2px 6px;
+            }
+
+            /* Cards mobile */
+            .stat-card {
+                padding: 18px;
+            }
+
+            .stat-card .number {
+                font-size: 2rem;
+            }
+
+            .benefit-card {
+                padding: 18px;
+            }
+
+            .benefit-card .icon {
+                font-size: 2rem;
+            }
+
+            /* Product line cards mobile */
+            .product-line-card {
+                padding: 20px;
+            }
+
+            .product-line-card h3 {
+                font-size: 1.4rem;
+            }
+
+            /* Ambassador grid mobile */
+            .ambassador-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .ambassador-card .photo {
+                width: 100px;
+                height: 100px;
+                font-size: 2rem;
+            }
+
+            .ambassador-card h4 {
+                font-size: 1.1rem;
+            }
+
+            /* Timeline mobile - vertical */
+            .timeline {
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 25px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-item {
+                width: 100%;
+                text-align: left;
+                padding-left: 40px;
+                position: relative;
+            }
+
+            .timeline-item .dot {
+                position: absolute;
+                left: 0;
+                top: 0;
+                margin: 0;
+            }
+
+            /* Tables mobile */
+            .pricing-table {
+                font-size: 0.8rem;
+            }
+
+            .pricing-table th, .pricing-table td {
+                padding: 8px 10px;
+            }
+
+            /* Text adjustments */
+            .intro-text {
+                padding: 15px 18px;
+                font-size: 0.85rem;
+            }
+
+            .highlight-box, .success-box {
+                padding: 15px 18px;
+            }
+
+            .check-list li {
+                padding: 8px 0 8px 25px;
+                font-size: 0.9rem;
+            }
+
+            /* Contact section mobile */
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .contact-details h3 {
+                font-size: 1.2rem;
+            }
+
+            /* Category bar mobile */
+            .category-bar {
+                height: auto;
+                flex-direction: column;
+            }
+
+            .category-segment {
+                padding: 10px;
+                width: 100% !important;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .nav-dot {
+                width: 6px;
+                height: 6px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+
+            .slide-header h2 {
+                font-size: 1.1rem;
+            }
+
+            .cover-slide h1 {
+                font-size: 1.3rem;
+            }
+
+            .stat-card .number {
+                font-size: 1.6rem;
+            }
+        }
     </style>
 </head>
 <body>
