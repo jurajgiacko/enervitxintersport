@@ -25,6 +25,7 @@
             scroll-behavior: auto;
             overflow: hidden;
             overflow-x: hidden;
+            overscroll-behavior: none;
         }
 
         body {
@@ -35,10 +36,13 @@
             overflow: hidden;
             overflow-x: hidden;
             height: 100vh;
+            height: 100dvh;
             width: 100vw;
             position: fixed;
             top: 0;
             left: 0;
+            overscroll-behavior: none;
+            touch-action: pan-y pinch-zoom;
         }
 
         /* Navigation */
@@ -135,9 +139,11 @@
             display: flex;
             width: fit-content;
             height: calc(100vh - 60px);
+            height: calc(100dvh - 60px);
             margin-top: 60px;
             transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             will-change: transform;
+            touch-action: none;
         }
 
         /* Slide styles */
@@ -146,13 +152,16 @@
             min-width: 100vw;
             max-width: 100vw;
             height: calc(100vh - 60px);
+            height: calc(100dvh - 60px);
             flex-shrink: 0;
+            flex-grow: 0;
             background: white;
             display: flex;
             flex-direction: column;
             overflow-y: auto;
             overflow-x: hidden;
             position: relative;
+            overscroll-behavior: contain;
         }
 
         .slide-inner {
@@ -1848,15 +1857,36 @@
 
         // Touch/swipe support
         let touchStartX = 0;
-        let touchEndX = 0;
+        let touchStartY = 0;
+        let isSwiping = false;
 
         document.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            isSwiping = false;
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!touchStartX) return;
+
+            const touchX = e.touches[0].clientX;
+            const touchY = e.touches[0].clientY;
+            const diffX = touchStartX - touchX;
+            const diffY = touchStartY - touchY;
+
+            // If horizontal swipe is dominant, prevent default scrolling
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 10) {
+                isSwiping = true;
+                e.preventDefault();
+            }
+        }, { passive: false });
 
         document.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
+            if (!touchStartX) return;
+
+            const touchEndX = e.changedTouches[0].clientX;
             const diff = touchStartX - touchEndX;
+
             if (Math.abs(diff) > 50) {
                 if (diff > 0) {
                     goToSlide(currentSlide + 1);
@@ -1864,7 +1894,11 @@
                     goToSlide(currentSlide - 1);
                 }
             }
-        });
+
+            touchStartX = 0;
+            touchStartY = 0;
+            isSwiping = false;
+        }, { passive: true });
 
         // Mouse wheel horizontal scroll
         document.addEventListener('wheel', (e) => {
