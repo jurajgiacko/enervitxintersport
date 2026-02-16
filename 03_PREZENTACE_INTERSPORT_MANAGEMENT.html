@@ -729,6 +729,64 @@
         .category-segment.recovery { background: var(--purepro-teal); }
         .category-segment.protein { background: var(--enervit-dark); }
 
+        /* Photo elements */
+        .hero-photo-banner {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .photo-strip {
+            display: flex;
+            gap: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .photo-strip img {
+            flex: 1;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .photo-accent {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .athlete-photo-circle {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(227, 6, 19, 0.3);
+            border: 4px solid white;
+        }
+
+        .slide-photo-bg {
+            position: relative;
+        }
+
+        .slide-photo-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0;
+        }
+
+        .slide-photo-bg > * {
+            position: relative;
+            z-index: 1;
+        }
+
         /* Contact slide */
         .contact-info {
             display: grid;
@@ -1033,6 +1091,24 @@
                 font-size: 0.9rem;
             }
 
+            /* Photo elements mobile */
+            .hero-photo-banner {
+                height: 120px;
+            }
+
+            .photo-strip img {
+                height: 80px;
+            }
+
+            .photo-accent {
+                height: 100px;
+            }
+
+            .athlete-photo-circle {
+                width: 90px;
+                height: 90px;
+            }
+
             /* Contact section mobile */
             .contact-info {
                 grid-template-columns: 1fr;
@@ -1138,26 +1214,36 @@
     <div class="slides-container">
 
     <!-- SLIDE 1: Cover -->
-    <div class="slide cover-slide" id="slide-0" style="background: linear-gradient(135deg, rgba(227,6,19,0.92) 0%, rgba(139,0,0,0.95) 100%), url('lifestyle-sport.jpg') center/cover no-repeat;">
-        <div style="background: var(--enervit-red); padding: 15px 35px; border-radius: 12px; display: inline-block;">
-            <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 50px;">
-        </div>
-        <div class="tagline">The Positive Nutrition Company</div>
-        <h1>Obchodní nabídka pro INTERSPORT CZ</h1>
-        <div class="subtitle">Prémiová sportovní výživa pro vaše zákazníky</div>
-        <div class="partner-logos">
-            <div class="partner-box" style="background: var(--enervit-red);">
-                <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 40px;">
+    <div class="slide cover-slide" id="slide-0" style="background: linear-gradient(160deg, rgba(227,6,19,0.88) 0%, rgba(35,47,93,0.92) 60%, rgba(26,26,46,0.95) 100%), url('pogacar-tour-banner.jpg') center/cover no-repeat; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; right: 0; width: 55%; height: 100%; background: url('Enervit_PurePro_GPH_80.jpg') center/cover no-repeat; opacity: 0.12; mask-image: linear-gradient(to left, black 0%, transparent 100%); -webkit-mask-image: linear-gradient(to left, black 0%, transparent 100%);"></div>
+        <div style="position: relative; z-index: 2;">
+            <div style="background: var(--enervit-red); padding: 18px 40px; border-radius: 14px; display: inline-block; box-shadow: 0 8px 30px rgba(227,6,19,0.4);">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 55px;">
             </div>
-            <div class="plus">+</div>
-            <div class="partner-box">
-                <img src="intersport-logo.svg" alt="INTERSPORT" style="height: 35px;">
+            <div class="tagline" style="font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; margin-top: 15px;">The Positive Nutrition Company</div>
+            <h1 style="font-size: 2.8rem; font-weight: 700; margin-top: 30px; text-shadow: 0 2px 20px rgba(0,0,0,0.3);">Obchodní nabídka pro INTERSPORT CZ</h1>
+            <div class="subtitle" style="font-size: 1.3rem; opacity: 0.9; margin-top: 10px;">Prémiová sportovní výživa pro vaše zákazníky</div>
+
+            <div style="display: flex; gap: 12px; justify-content: center; margin-top: 40px;">
+                <img src="pogacar-cycling.jpg" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.6); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                <img src="sinner-usopen.jpg" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.6); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                <img src="Enervit_PurePro_GPH_58.jpg" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.6); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                <img src="isotonic-gel-action.jpg" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.6); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
             </div>
+
+            <div class="partner-logos" style="margin-top: 40px;">
+                <div class="partner-box" style="background: var(--enervit-red); box-shadow: 0 4px 20px rgba(227,6,19,0.4);">
+                    <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 40px;">
+                </div>
+                <div class="plus">+</div>
+                <div class="partner-box" style="box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                    <img src="intersport-logo.svg" alt="INTERSPORT" style="height: 35px;">
+                </div>
+            </div>
+            <p style="margin-top: 35px; opacity: 0.7; font-size: 0.9rem;">
+                Kompletní obchodní nabídka včetně cenových podmínek · Únor 2026
+            </p>
         </div>
-        <p style="margin-top: 50px; opacity: 0.8; font-size: 0.95rem;">
-            Tato prezentace obsahuje kompletní obchodní nabídku včetně cenových podmínek.<br>
-            V případě zájmu nás kontaktujte pro osobní prezentaci a zodpovězení dotazů.
-        </p>
     </div>
 
     <!-- SLIDE 2: O značce ENERVIT -->
@@ -1169,28 +1255,28 @@
             </div>
         </div>
         <div class="slide-content">
-            <div class="intro-text" style="background: linear-gradient(135deg, var(--enervit-dark) 0%, #1a1a2e 100%); display: flex; align-items: center; gap: 25px;">
-                <div style="flex: 1;">
-                    <strong style="color: var(--enervit-red);">ENERVIT</strong><span style="color: white;"> je prémiová italská značka sportovní výživy, která od roku 1954 vyvíjí produkty ve spolupráci s vrcholovými sportovci a sportovními vědci. Značka je distribuována ve </span><strong style="color: var(--enervit-red);">44 zemích světa</strong><span style="color: white;"> a je lídrem na italském trhu.</span>
-                </div>
-                <div style="min-width: 180px; height: 100px; border-radius: 12px; overflow: hidden;">
-                    <img src="lifestyle-cycling.jpg" alt="ENERVIT Sport" style="width: 180px; height: 100px; object-fit: cover; border-radius: 12px;">
-                </div>
+            <!-- Hero photo banner -->
+            <div style="display: flex; gap: 8px; margin-bottom: 20px; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+                <img src="uae-team.jpg" alt="UAE Team Emirates x ENERVIT" style="flex: 2; height: 150px; object-fit: cover;">
+                <img src="Enervit_PurePro_GPH_5.jpg" alt="ENERVIT Lifestyle" style="flex: 1; height: 150px; object-fit: cover;">
+                <img src="isotonic-gel-action.jpg" alt="ENERVIT v akci" style="flex: 1; height: 150px; object-fit: cover;">
             </div>
+
             <div class="grid-2">
                 <div>
-                    <h3 style="color: var(--enervit-red); margin-bottom: 20px; font-size: 1.5rem;">Co dělá ENERVIT výjimečným:</h3>
+                    <div style="background: linear-gradient(135deg, var(--enervit-dark) 0%, #1a1a2e 100%); padding: 20px 25px; border-radius: 12px; margin-bottom: 20px;">
+                        <span style="color: white; font-size: 0.95rem;"><strong style="color: var(--enervit-red);">ENERVIT</strong> je prémiová italská značka sportovní výživy, která od roku 1954 vyvíjí produkty ve spolupráci s vrcholovými sportovci a sportovními vědci. Značka je distribuována ve <strong style="color: var(--enervit-red);">44 zemích světa</strong> a je lídrem na italském trhu.</span>
+                    </div>
                     <ul class="check-list">
-                        <li><strong>70+ let zkušeností</strong> - jedna z nejstarších značek sportovní výživy v Evropě</li>
-                        <li><strong>Vědecký přístup</strong> - vlastní výzkumné centrum, spolupráce s univerzitami</li>
-                        <li><strong>Patentovaná technologie C2:1</strong> - revolucionářský poměr sacharidů pro maximální vstřebávání</li>
-                        <li><strong>Ambasadoři světové úrovně</strong> - Sinner, Pogačar, Pellegrino</li>
-                        <li><strong>Certifikovaná udržitelnost</strong> - EcoVadis Silver Medal</li>
-                        <li><strong>Kompletní portfolio</strong> - tři specializované produktové řady</li>
+                        <li><strong>70+ let zkušeností</strong> — jedna z nejstarších značek sportovní výživy v Evropě</li>
+                        <li><strong>Vědecký přístup</strong> — vlastní výzkumné centrum, spolupráce s univerzitami</li>
+                        <li><strong>Patentovaná technologie C2:1</strong> — maximální vstřebávání energie</li>
+                        <li><strong>Ambasadoři světové úrovně</strong> — Sinner, Pogačar, Del Toro, Puppi</li>
+                        <li><strong>Certifikovaná udržitelnost</strong> — EcoVadis Silver Medal</li>
                     </ul>
                 </div>
                 <div>
-                    <div class="grid-2" style="gap: 18px;">
+                    <div class="grid-2" style="gap: 14px;">
                         <div class="stat-card">
                             <div class="number">70+</div>
                             <div class="label">Let zkušeností</div>
@@ -1208,9 +1294,9 @@
                             <div class="label">Na italském trhu</div>
                         </div>
                     </div>
-                    <div class="highlight-box" style="margin-top: 20px;">
+                    <div class="highlight-box" style="margin-top: 18px;">
                         <strong>Distributor pro ČR a SR:</strong><br>
-                        VITAR Sport, s.r.o. - exkluzivní distributor s kompletní logistickou a marketingovou podporou.
+                        VITAR Sport, s.r.o. — exkluzivní distributor s kompletní logistickou a marketingovou podporou.
                     </div>
                 </div>
             </div>
@@ -1231,45 +1317,45 @@
             </div>
         </div>
         <div class="slide-content">
-            <div class="intro-text" style="background: linear-gradient(135deg, var(--enervit-dark) 0%, #1a1a2e 100%); display: flex; align-items: center; gap: 25px;">
-                <div style="flex: 1; color: white;">
-                    ENERVIT je volbou <strong style="color: var(--enervit-red);">absolutních šampionů</strong> ve svých disciplínách. Spolupráce s elitními sportovci zajišťuje neustálý vývoj a testování produktů v těch nejnáročnějších podmínkách. <strong>Obnovené partnerství 2026</strong> se Sinnerem i Pogačarem.
-                </div>
-                <div style="min-width: 180px; height: 100px; border-radius: 12px; overflow: hidden;">
-                    <img src="lifestyle-running.jpg" alt="ENERVIT Sport" style="width: 180px; height: 100px; object-fit: cover; border-radius: 12px;">
-                </div>
+            <!-- Hero photo strip -->
+            <div style="display: flex; gap: 6px; margin-bottom: 20px; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.12);">
+                <img src="sinner-usopen.jpg" alt="Jannik Sinner" style="flex: 1; height: 130px; object-fit: cover; object-position: top;">
+                <img src="pogacar-tour-banner.jpg" alt="Tadej Pogačar" style="flex: 1.5; height: 130px; object-fit: cover;">
+                <img src="Enervit_PurePro_GPH_48.jpg" alt="ENERVIT Lifestyle" style="flex: 1; height: 130px; object-fit: cover;">
+                <img src="Enervit_PurePro_GPH_3.jpg" alt="ENERVIT Sport" style="flex: 1; height: 130px; object-fit: cover;">
             </div>
+
             <div class="ambassador-grid">
                 <div class="ambassador-card">
-                    <div class="photo" style="background: linear-gradient(135deg, #2d7a2d 0%, #1a5c1a 100%);">🎾</div>
+                    <img src="sinner-usopen.jpg" alt="Jannik Sinner" class="athlete-photo-circle" style="margin: 0 auto 18px;">
                     <h4>Jannik Sinner</h4>
                     <div class="sport">Tenis</div>
                     <div class="achievement"><strong>#1 ATP, 4x Grand Slam</strong><br>Australian Open 2024, 2025<br>Wimbledon 2025, US Open 2024</div>
                 </div>
                 <div class="ambassador-card">
-                    <div class="photo" style="background: linear-gradient(135deg, #f5a623 0%, #d4920e 100%);">🚴</div>
+                    <img src="pogacar-cycling.jpg" alt="Tadej Pogačar" class="athlete-photo-circle" style="margin: 0 auto 18px;">
                     <h4>Tadej Pogačar</h4>
                     <div class="sport">Cyklistika · UAE Team Emirates</div>
                     <div class="achievement"><strong>4x Tour de France</strong><br>2x mistr světa (2024, 2025)<br>Giro d'Italia 2024</div>
                 </div>
                 <div class="ambassador-card">
-                    <div class="photo">⛷️</div>
+                    <img src="Enervit_PurePro_GPH_9.jpg" alt="Federico Pellegrino" class="athlete-photo-circle" style="margin: 0 auto 18px;">
                     <h4>Federico Pellegrino</h4>
                     <div class="sport">Běh na lyžích</div>
                     <div class="achievement"><strong>7x medailista MS</strong><br>Stříbro sprint MS 2025<br>Nejúspěšnější italský běžec</div>
                 </div>
             </div>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 20px;">
-                <div class="ambassador-card" style="display: flex; align-items: center; gap: 20px; text-align: left; padding: 20px; background: var(--gray); border-radius: 12px;">
-                    <div class="photo" style="width: 80px; height: 80px; min-width: 80px; font-size: 1.8rem; margin: 0; background: linear-gradient(135deg, #f5a623 0%, #d4920e 100%);">🚴</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div class="ambassador-card" style="display: flex; align-items: center; gap: 18px; text-align: left; padding: 18px; background: var(--gray); border-radius: 12px;">
+                    <img src="uae-team.jpg" alt="Isaac Del Toro" style="width: 80px; height: 80px; min-width: 80px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 15px rgba(227,6,19,0.2); border: 3px solid white;">
                     <div>
                         <h4 style="font-size: 1.1rem;">Isaac Del Toro</h4>
                         <div class="sport" style="font-size: 0.85rem;">Cyklistika · UAE Team Emirates</div>
                         <div class="achievement">Vycházející hvězda, osobní smlouva s ENERVIT</div>
                     </div>
                 </div>
-                <div class="ambassador-card" style="display: flex; align-items: center; gap: 20px; text-align: left; padding: 20px; background: var(--gray); border-radius: 12px;">
-                    <div class="photo" style="width: 80px; height: 80px; min-width: 80px; font-size: 1.8rem; margin: 0; background: linear-gradient(135deg, #5a8f3c 0%, #3d6b22 100%);">🏔️</div>
+                <div class="ambassador-card" style="display: flex; align-items: center; gap: 18px; text-align: left; padding: 18px; background: var(--gray); border-radius: 12px;">
+                    <img src="Enervit_PurePro_GPH_55.jpg" alt="Francesco Puppi" style="width: 80px; height: 80px; min-width: 80px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 15px rgba(227,6,19,0.2); border: 3px solid white;">
                     <div>
                         <h4 style="font-size: 1.1rem;">Francesco Puppi</h4>
                         <div class="sport" style="font-size: 0.85rem;">Trail Running</div>
@@ -1277,8 +1363,8 @@
                     </div>
                 </div>
             </div>
-            <div class="success-box" style="margin-top: 15px; text-align: center;">
-                <strong>Multi-sport DNA:</strong> Cyklistika, tenis, běh, trail running, triatlon, běžecké lyžování. Spolupráce s globálními hvězdami zvyšuje hodnotu značky a přitažlivost pro zákazníky INTERSPORT.
+            <div style="margin-top: 15px; background: linear-gradient(135deg, var(--enervit-dark) 0%, #1a1a2e 100%); color: white; padding: 16px 25px; border-radius: 12px; text-align: center;">
+                <strong style="color: var(--enervit-red);">Multi-sport DNA:</strong> Cyklistika · Tenis · Běh · Trail Running · Triatlon · Běžecké lyžování — <strong>obnovené partnerství 2026</strong> se Sinnerem i Pogačarem.
             </div>
         </div>
         <div class="slide-footer">
@@ -1297,10 +1383,15 @@
             </div>
         </div>
         <div class="slide-content">
-            <div class="intro-text">
-                Portfolio ENERVIT je rozděleno do <strong>tří specializovaných produktových řad</strong>, které pokrývají různé potřeby sportovců - od rekreačních běžců po profesionální vytrvalce.
+            <div style="display: flex; gap: 8px; margin-bottom: 20px; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 25px rgba(0,0,0,0.1);">
+                <img src="Enervit_PurePro_GPH_40.jpg" alt="ENERVIT lifestyle" style="flex: 1; height: 110px; object-fit: cover;">
+                <img src="energy-gels-banner.png" alt="ENERVIT gely" style="flex: 1.3; height: 110px; object-fit: cover;">
+                <img src="Enervit_PurePro_GPH_84.jpg" alt="ENERVIT sport" style="flex: 1; height: 110px; object-fit: cover;">
             </div>
-            <div class="grid-3" style="margin-top: 25px;">
+            <div class="intro-text">
+                Portfolio ENERVIT je rozděleno do <strong>tří specializovaných produktových řad</strong>, které pokrývají různé potřeby sportovců — od rekreačních běžců po profesionální vytrvalce.
+            </div>
+            <div class="grid-3" style="margin-top: 20px;">
                 <div class="product-line-card enervit-sport">
                     <div class="line-badge">ZÁKLADNÍ ŘADA</div>
                     <h3>ENERVIT Sport</h3>
@@ -1379,6 +1470,12 @@
             </div>
         </div>
         <div class="slide-content">
+            <div style="display: flex; gap: 6px; margin-bottom: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <img src="Enervit_PurePro_GPH_85.jpg" alt="Before sport" style="flex: 1; height: 90px; object-fit: cover;">
+                <img src="pogacar-tour-banner.jpg" alt="During sport" style="flex: 1.5; height: 90px; object-fit: cover;">
+                <img src="Enervit_PurePro_GPH_58.jpg" alt="Recovery" style="flex: 1; height: 90px; object-fit: cover;">
+                <img src="magic-cherry-video-cover.jpg" alt="Vitamíny" style="flex: 1; height: 90px; object-fit: cover;">
+            </div>
             <div class="category-bar">
                 <div class="category-segment pre" style="width: 20%;">PŘED SPORTEM</div>
                 <div class="category-segment during" style="width: 40%;">BĚHEM SPORTU</div>
@@ -1431,8 +1528,13 @@
             </div>
         </div>
         <div class="slide-content">
-            <div class="intro-text">
-                ENERVIT přináší <strong>synergii</strong> s vaším sortimentem sportovního vybavení a posiluje pozici INTERSPORT jako <strong>kompletního odborníka na sport</strong>.
+            <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
+                <div class="intro-text" style="flex: 1; margin: 0;">
+                    ENERVIT přináší <strong>synergii</strong> s vaším sortimentem sportovního vybavení a posiluje pozici INTERSPORT jako <strong>kompletního odborníka na sport</strong>.
+                </div>
+                <div style="flex: 0 0 200px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <img src="Enervit_PurePro_GPH_63.jpg" alt="ENERVIT v akci" style="width: 200px; height: 100%; object-fit: cover;">
+                </div>
             </div>
             <div class="grid-3">
                 <div class="benefit-card" style="background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);">
@@ -1476,7 +1578,7 @@
 
     <!-- SLIDE 7: Cenové podmínky -->
     <div class="slide" id="slide-6">
-        <div class="slide-header">
+        <div class="slide-header" style="background: linear-gradient(135deg, var(--enervit-red) 0%, #c00510 60%), url('Enervit_PurePro_GPH_85.jpg') right/40% auto no-repeat; background-blend-mode: multiply;">
             <h2>Cenové podmínky</h2>
             <div class="logos">
                 <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
@@ -1868,8 +1970,13 @@
             </div>
         </div>
         <div class="slide-content">
-            <div class="intro-text">
-                Jako váš partner zajišťujeme <strong>kompletní podporu prodeje</strong> - od POS materiálů přes školení personálu až po marketingovou spolupráci.
+            <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
+                <div class="intro-text" style="flex: 1; margin: 0;">
+                    Jako váš partner zajišťujeme <strong>kompletní podporu prodeje</strong> — od POS materiálů přes školení personálu až po marketingovou spolupráci.
+                </div>
+                <div style="flex: 0 0 180px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <img src="Enervit_PurePro_GPH_80.jpg" alt="ENERVIT podpora" style="width: 180px; height: 100%; object-fit: cover;">
+                </div>
             </div>
             <div class="grid-2">
                 <div>
@@ -1928,8 +2035,13 @@
             </div>
         </div>
         <div class="slide-content">
-            <div class="intro-text">
-                Nabízíme <strong>transparentní a flexibilní podmínky</strong> navržené tak, aby spolupráce byla pro INTERSPORT bezriziková a logisticky jednoduchá.
+            <div style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 20px;">
+                <div class="intro-text" style="flex: 1; margin: 0;">
+                    Nabízíme <strong>transparentní a flexibilní podmínky</strong> navržené tak, aby spolupráce byla pro INTERSPORT bezriziková a logisticky jednoduchá.
+                </div>
+                <div style="flex: 0 0 160px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <img src="Enervit_PurePro_GPH_40.jpg" alt="ENERVIT partnerství" style="width: 160px; height: 100%; object-fit: cover;">
+                </div>
             </div>
             <div class="grid-3" style="margin-top: 25px;">
                 <div class="stat-card highlight" style="padding: 35px 25px;">
@@ -2028,6 +2140,11 @@
                 </div>
                 <div class="contact-details" style="text-align: center;">
                     <h3>Váš Key Account Manager</h3>
+                    <div style="display: flex; gap: 6px; margin-bottom: 15px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                        <img src="pogacar-cycling.jpg" alt="Pogačar" style="flex: 1; height: 70px; object-fit: cover;">
+                        <img src="Enervit_PurePro_GPH_3.jpg" alt="ENERVIT" style="flex: 1; height: 70px; object-fit: cover;">
+                        <img src="sinner-usopen.jpg" alt="Sinner" style="flex: 1; height: 70px; object-fit: cover;">
+                    </div>
                     <div style="background: var(--gray); padding: 25px; border-radius: 12px;">
                         <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--enervit-red) 0%, var(--enervit-dark) 100%); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">KC</div>
                         <p style="font-size: 1.4rem; font-weight: bold; color: var(--enervit-dark);">Karolína Calda</p>
@@ -2055,27 +2172,39 @@
     </div>
 
     <!-- SLIDE 13: Closing -->
-    <div class="slide cover-slide" id="slide-12" style="background: linear-gradient(135deg, var(--enervit-dark) 0%, #1a1a2e 100%);">
-        <div style="background: var(--enervit-red); padding: 15px 35px; border-radius: 12px; display: inline-block;">
-            <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 50px;">
-        </div>
-        <div class="tagline">The Positive Nutrition Company</div>
-        <h1 style="margin-top: 50px;">Děkujeme za váš čas</h1>
-        <div class="subtitle" style="opacity: 0.9; max-width: 700px;">
-            Věříme, že ENERVIT bude skvělým doplněním sortimentu INTERSPORT a společně posílíme pozici lídra na českém sportovním trhu.
-        </div>
-        <div style="margin-top: 60px; display: flex; gap: 30px; justify-content: center; align-items: center;">
-            <div class="partner-box" style="background: var(--enervit-red);">
-                <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 35px;">
+    <div class="slide cover-slide" id="slide-12" style="background: linear-gradient(160deg, rgba(35,47,93,0.92) 0%, rgba(26,26,46,0.88) 40%, rgba(227,6,19,0.85) 100%), url('Enervit_PurePro_GPH_80.jpg') center/cover no-repeat; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: url('pogacar-tour-banner.jpg') center/cover no-repeat; opacity: 0.1; mask-image: linear-gradient(to right, black 0%, transparent 100%); -webkit-mask-image: linear-gradient(to right, black 0%, transparent 100%);"></div>
+        <div style="position: relative; z-index: 2;">
+            <div style="background: var(--enervit-red); padding: 18px 40px; border-radius: 14px; display: inline-block; box-shadow: 0 8px 30px rgba(227,6,19,0.4);">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 55px;">
             </div>
-            <span style="font-size: 1.5rem; opacity: 0.6;">×</span>
-            <div class="partner-box" style="background: white;">
-                <img src="intersport-logo.svg" alt="INTERSPORT" style="height: 30px;">
+            <div class="tagline" style="font-size: 1.1rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; margin-top: 15px;">The Positive Nutrition Company</div>
+
+            <div style="display: flex; gap: 8px; justify-content: center; margin-top: 30px; margin-bottom: 30px;">
+                <img src="sinner-usopen.jpg" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.5); opacity: 0.8;">
+                <img src="pogacar-cycling.jpg" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.5); opacity: 0.8;">
+                <img src="Enervit_PurePro_GPH_58.jpg" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.5); opacity: 0.8;">
+                <img src="isotonic-gel-action.jpg" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.5); opacity: 0.8;">
+                <img src="Enervit_PurePro_GPH_3.jpg" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255,255,255,0.5); opacity: 0.8;">
             </div>
-        </div>
-        <div style="margin-top: 50px; opacity: 0.7;">
-            <p>www.enervit.cz | calda.karolina@enervit.cz | +420 724 963 739</p>
-            <p style="margin-top: 10px; font-size: 0.9rem;">Karolína Calda | Sales Manager</p>
+
+            <h1 style="font-size: 2.5rem; font-weight: 700; text-shadow: 0 2px 20px rgba(0,0,0,0.3);">Děkujeme za váš čas</h1>
+            <div class="subtitle" style="opacity: 0.9; max-width: 700px; margin: 15px auto 0;">
+                Věříme, že ENERVIT bude skvělým doplněním sortimentu INTERSPORT a společně posílíme pozici lídra na českém sportovním trhu.
+            </div>
+            <div style="margin-top: 40px; display: flex; gap: 30px; justify-content: center; align-items: center;">
+                <div class="partner-box" style="background: var(--enervit-red); box-shadow: 0 4px 20px rgba(227,6,19,0.4);">
+                    <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 35px;">
+                </div>
+                <span style="font-size: 1.5rem; opacity: 0.6;">×</span>
+                <div class="partner-box" style="background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                    <img src="intersport-logo.svg" alt="INTERSPORT" style="height: 30px;">
+                </div>
+            </div>
+            <div style="margin-top: 40px; opacity: 0.7;">
+                <p>www.enervit.cz | calda.karolina@enervit.cz | +420 724 963 739</p>
+                <p style="margin-top: 8px; font-size: 0.9rem;">Karolína Calda | Sales Manager</p>
+            </div>
         </div>
     </div>
 
