@@ -212,9 +212,19 @@
 
         .logo-img {
             height: 40px;
-            background: white;
             padding: 8px 15px;
             border-radius: 8px;
+        }
+
+        .logo-img.enervit-brand {
+            background: var(--enervit-red);
+            padding: 8px 15px;
+        }
+
+        .logo-img.enervit-on-red {
+            background: none;
+            padding: 0;
+            height: 35px;
         }
 
         .logo-img.intersport {
@@ -1106,14 +1116,15 @@
         <div class="nav-dot" data-slide="5" title="Proč ENERVIT"></div>
         <div class="nav-dot" data-slide="6" title="Cenové podmínky"></div>
         <div class="nav-dot" data-slide="7" title="Sortiment"></div>
-        <div class="nav-dot" data-slide="8" title="Podpora"></div>
-        <div class="nav-dot" data-slide="9" title="Plán"></div>
-        <div class="nav-dot" data-slide="10" title="Shrnutí"></div>
-        <div class="nav-dot" data-slide="11" title="Závěr"></div>
+        <div class="nav-dot" data-slide="8" title="Planogram"></div>
+        <div class="nav-dot" data-slide="9" title="Podpora"></div>
+        <div class="nav-dot" data-slide="10" title="Podmínky"></div>
+        <div class="nav-dot" data-slide="11" title="Shrnutí"></div>
+        <div class="nav-dot" data-slide="12" title="Závěr"></div>
         <div class="nav-buttons-container">
             <button class="nav-btn" id="next-btn" title="Další snímek">▶</button>
         </div>
-        <span class="slide-counter" id="slide-counter">1 / 12</span>
+        <span class="slide-counter" id="slide-counter">1 / 13</span>
     </nav>
 
     <!-- Keyboard hint -->
@@ -1125,14 +1136,16 @@
     <div class="slides-container">
 
     <!-- SLIDE 1: Cover -->
-    <div class="slide cover-slide" id="slide-0">
-        <img src="enervit-logo-color.svg" alt="ENERVIT" class="main-logo">
+    <div class="slide cover-slide" id="slide-0" style="background: linear-gradient(135deg, rgba(227,6,19,0.92) 0%, rgba(139,0,0,0.95) 100%), url('lifestyle-sport.jpg') center/cover no-repeat;">
+        <div style="background: var(--enervit-red); padding: 15px 35px; border-radius: 12px; display: inline-block;">
+            <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 50px;">
+        </div>
         <div class="tagline">The Positive Nutrition Company</div>
         <h1>Obchodní nabídka pro INTERSPORT CZ</h1>
         <div class="subtitle">Prémiová sportovní výživa pro vaše zákazníky</div>
         <div class="partner-logos">
-            <div class="partner-box">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" style="height: 40px;">
+            <div class="partner-box" style="background: var(--enervit-red);">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 40px;">
             </div>
             <div class="plus">+</div>
             <div class="partner-box">
@@ -1150,12 +1163,17 @@
         <div class="slide-header">
             <h2>O značce ENERVIT</h2>
             <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
             </div>
         </div>
         <div class="slide-content">
-            <div class="intro-text">
-                <strong>ENERVIT</strong> je prémiová italská značka sportovní výživy, která od roku 1954 vyvíjí produkty ve spolupráci s vrcholovými sportovci a sportovními vědci. Značka je distribuována ve <strong>44 zemích světa</strong> a je lídrem na italském trhu.
+            <div class="intro-text" style="background: linear-gradient(135deg, var(--enervit-dark) 0%, #1a1a2e 100%); display: flex; align-items: center; gap: 25px;">
+                <div style="flex: 1;">
+                    <strong style="color: var(--enervit-red);">ENERVIT</strong><span style="color: white;"> je prémiová italská značka sportovní výživy, která od roku 1954 vyvíjí produkty ve spolupráci s vrcholovými sportovci a sportovními vědci. Značka je distribuována ve </span><strong style="color: var(--enervit-red);">44 zemích světa</strong><span style="color: white;"> a je lídrem na italském trhu.</span>
+                </div>
+                <div style="min-width: 180px; height: 100px; border-radius: 12px; overflow: hidden;">
+                    <img src="lifestyle-cycling.jpg" alt="ENERVIT Sport" style="width: 180px; height: 100px; object-fit: cover; border-radius: 12px;">
+                </div>
             </div>
             <div class="grid-2">
                 <div>
@@ -1207,24 +1225,29 @@
         <div class="slide-header">
             <h2>Ambasadoři světové úrovně</h2>
             <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
             </div>
         </div>
         <div class="slide-content">
-            <div class="intro-text">
-                ENERVIT je volbou <strong>absolutních šampionů</strong> ve svých disciplínách. Spolupráce s elitními sportovci zajišťuje neustálý vývoj a testování produktů v těch nejnáročnějších podmínkách.
+            <div class="intro-text" style="background: linear-gradient(135deg, var(--enervit-dark) 0%, #1a1a2e 100%); display: flex; align-items: center; gap: 25px;">
+                <div style="flex: 1; color: white;">
+                    ENERVIT je volbou <strong style="color: var(--enervit-red);">absolutních šampionů</strong> ve svých disciplínách. Spolupráce s elitními sportovci zajišťuje neustálý vývoj a testování produktů v těch nejnáročnějších podmínkách. <strong>Obnovené partnerství 2026</strong> se Sinnerem i Pogačarem.
+                </div>
+                <div style="min-width: 180px; height: 100px; border-radius: 12px; overflow: hidden;">
+                    <img src="lifestyle-running.jpg" alt="ENERVIT Sport" style="width: 180px; height: 100px; object-fit: cover; border-radius: 12px;">
+                </div>
             </div>
             <div class="ambassador-grid">
                 <div class="ambassador-card">
-                    <div class="photo">🎾</div>
+                    <div class="photo" style="background: linear-gradient(135deg, #2d7a2d 0%, #1a5c1a 100%);">🎾</div>
                     <h4>Jannik Sinner</h4>
                     <div class="sport">Tenis</div>
                     <div class="achievement"><strong>#1 ATP, 4x Grand Slam</strong><br>Australian Open 2024, 2025<br>Wimbledon 2025, US Open 2024</div>
                 </div>
                 <div class="ambassador-card">
-                    <div class="photo">🚴</div>
+                    <div class="photo" style="background: linear-gradient(135deg, #f5a623 0%, #d4920e 100%);">🚴</div>
                     <h4>Tadej Pogačar</h4>
-                    <div class="sport">Cyklistika</div>
+                    <div class="sport">Cyklistika · UAE Team Emirates</div>
                     <div class="achievement"><strong>4x Tour de France</strong><br>2x mistr světa (2024, 2025)<br>Giro d'Italia 2024</div>
                 </div>
                 <div class="ambassador-card">
@@ -1234,8 +1257,26 @@
                     <div class="achievement"><strong>7x medailista MS</strong><br>Stříbro sprint MS 2025<br>Nejúspěšnější italský běžec</div>
                 </div>
             </div>
-            <div class="success-box" style="margin-top: 25px; text-align: center;">
-                <strong>Marketingový potenciál:</strong> Spolupráce s globálními hvězdami zvyšuje hodnotu značky a přitažlivost pro zákazníky INTERSPORT, kteří se zajímají o cyklistiku, tenis, běh a zimní sporty.
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 20px;">
+                <div class="ambassador-card" style="display: flex; align-items: center; gap: 20px; text-align: left; padding: 20px; background: var(--gray); border-radius: 12px;">
+                    <div class="photo" style="width: 80px; height: 80px; min-width: 80px; font-size: 1.8rem; margin: 0; background: linear-gradient(135deg, #f5a623 0%, #d4920e 100%);">🚴</div>
+                    <div>
+                        <h4 style="font-size: 1.1rem;">Isaac Del Toro</h4>
+                        <div class="sport" style="font-size: 0.85rem;">Cyklistika · UAE Team Emirates</div>
+                        <div class="achievement">Vycházející hvězda, osobní smlouva s ENERVIT</div>
+                    </div>
+                </div>
+                <div class="ambassador-card" style="display: flex; align-items: center; gap: 20px; text-align: left; padding: 20px; background: var(--gray); border-radius: 12px;">
+                    <div class="photo" style="width: 80px; height: 80px; min-width: 80px; font-size: 1.8rem; margin: 0; background: linear-gradient(135deg, #5a8f3c 0%, #3d6b22 100%);">🏔️</div>
+                    <div>
+                        <h4 style="font-size: 1.1rem;">Francesco Puppi</h4>
+                        <div class="sport" style="font-size: 0.85rem;">Trail Running</div>
+                        <div class="achievement">Vítěz CCC Chamonix, elitní trail runner</div>
+                    </div>
+                </div>
+            </div>
+            <div class="success-box" style="margin-top: 15px; text-align: center;">
+                <strong>Multi-sport DNA:</strong> Cyklistika, tenis, běh, trail running, triatlon, běžecké lyžování. Spolupráce s globálními hvězdami zvyšuje hodnotu značky a přitažlivost pro zákazníky INTERSPORT.
             </div>
         </div>
         <div class="slide-footer">
@@ -1250,7 +1291,7 @@
         <div class="slide-header">
             <h2>Tři specializované produktové řady</h2>
             <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
             </div>
         </div>
         <div class="slide-content">
@@ -1332,7 +1373,7 @@
         <div class="slide-header">
             <h2>Kompletní portfolio pro každou fázi sportu</h2>
             <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
             </div>
         </div>
         <div class="slide-content">
@@ -1383,7 +1424,7 @@
         <div class="slide-header">
             <h2>Proč ENERVIT pro INTERSPORT?</h2>
             <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
                 <img src="intersport-logo.svg" alt="INTERSPORT" class="logo-img intersport">
             </div>
         </div>
@@ -1415,7 +1456,7 @@
                 <div class="benefit-card">
                     <div class="icon">🔄</div>
                     <h4>Bez rizika zásob</h4>
-                    <p><strong>Výměna zboží</strong> před expirací. Flexibilní objednávky dle aktuální potřeby.</p>
+                    <p><strong>Výměna zboží 60 dní před expirací.</strong> Individuální závozy na prodejnu. Dodání do 3 dnů.</p>
                 </div>
                 <div class="benefit-card">
                     <div class="icon">📈</div>
@@ -1436,7 +1477,7 @@
         <div class="slide-header">
             <h2>Cenové podmínky</h2>
             <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
                 <img src="intersport-logo.svg" alt="INTERSPORT" class="logo-img intersport">
             </div>
         </div>
@@ -1499,7 +1540,13 @@
                         <ul style="margin-left: 18px;">
                             <li>POS materiály pro prodejny</li>
                             <li>Školení personálu (online + prezenční)</li>
-                            <li>Výměna zboží 60 dní před expirací</li>
+                            <li>Vstupní balíček vzorků pro zaměstnance</li>
+                            <li><strong>Výměna zboží 60 dní před expirací</strong></li>
+                            <li><strong>Individuální závozy na každou prodejnu</strong></li>
+                            <li><strong>Expedice do 3 pracovních dnů</strong> (skladem)</li>
+                            <li><strong>Doprava zdarma</strong> nad 5 000 Kč</li>
+                            <li>Splatnost 30 dní</li>
+                            <li>Bez minimální objednávky</li>
                             <li>Marketingová podpora</li>
                             <li>Dedikovaný account manager</li>
                         </ul>
@@ -1519,7 +1566,7 @@
         <div class="slide-header">
             <h2>Doporučený sortiment pro INTERSPORT</h2>
             <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
             </div>
         </div>
         <div class="slide-content">
@@ -1619,12 +1666,203 @@
         </div>
     </div>
 
-    <!-- SLIDE 9: Podpora prodeje -->
+    <!-- SLIDE 9: Doporučený planogram -->
     <div class="slide" id="slide-8">
+        <div class="slide-header">
+            <h2>Doporučený planogram — police 90 cm</h2>
+            <div class="logos">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
+                <img src="intersport-logo.svg" alt="INTERSPORT" class="logo-img intersport">
+            </div>
+        </div>
+        <div class="slide-content">
+            <div class="intro-text">
+                Navrženo pro <strong>standardní polici 90 cm</strong> se 3 úrovněmi. Celkem <strong>21 SKU</strong> pokrývajících všechny tři produktové řady — od přípravy přes výkon po regeneraci.
+            </div>
+
+            <div style="margin-top: 15px; background: linear-gradient(180deg, #f8f4ef 0%, #efe8dd 100%); border-radius: 16px; padding: 20px 25px 25px; border: 2px solid #d4c5b0;">
+
+                <!-- POLICE 1 -->
+                <div style="margin-bottom: 18px;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                        <span style="background: var(--enervit-red); color: white; padding: 3px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;">POLICE 1</span>
+                        <span style="color: #888; font-size: 0.75rem;">Enervit Sport — příprava, gely, tablety</span>
+                    </div>
+                    <div style="display: flex; gap: 5px; padding: 10px 8px 14px; background: white; border-radius: 10px 10px 0 0; min-height: 80px; align-items: flex-end;">
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.7rem; line-height: 1.2;">PRE Sport</div>
+                            <div style="color: #999; font-size: 0.6rem;">45 g · pomeranč</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.7rem; line-height: 1.2;">PRE Sport</div>
+                            <div style="color: #999; font-size: 0.6rem;">kofein · cola</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.7rem; line-height: 1.2;">Gel 25 ml</div>
+                            <div style="color: #999; font-size: 0.6rem;">pomeranč</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.7rem; line-height: 1.2;">Gel 25 ml</div>
+                            <div style="color: #999; font-size: 0.6rem;">citron</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.7rem; line-height: 1.2;">Gel kofein</div>
+                            <div style="color: #999; font-size: 0.6rem;">25 ml · citrus</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.7rem; line-height: 1.2;">Carbo Tab</div>
+                            <div style="color: #999; font-size: 0.6rem;">24 ks · citron</div>
+                        </div>
+                    </div>
+                    <div style="height: 8px; background: linear-gradient(180deg, #8b6914, #a07828); border-radius: 0 0 6px 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>
+                </div>
+
+                <!-- POLICE 2 -->
+                <div style="margin-bottom: 18px;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                        <span style="background: #1a1a1a; color: var(--c21-yellow); padding: 3px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px; border: 1px solid var(--c21-yellow);">POLICE 2</span>
+                        <span style="color: #888; font-size: 0.75rem;">C2:1PRO — maximální výkon</span>
+                    </div>
+                    <div style="display: flex; gap: 5px; padding: 10px 8px 14px; background: white; border-radius: 10px 10px 0 0; min-height: 80px; align-items: flex-end;">
+                        <div style="flex: 1; background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid var(--c21-yellow); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--c21-yellow); color: #1a1a1a; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px; font-weight: 700;">C2:1</div>
+                            <div style="font-weight: 700; color: var(--c21-yellow); font-size: 0.7rem; line-height: 1.2;">Carbo Gel</div>
+                            <div style="color: #999; font-size: 0.6rem;">60 ml · mango</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid var(--c21-yellow); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--c21-yellow); color: #1a1a1a; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px; font-weight: 700;">C2:1</div>
+                            <div style="font-weight: 700; color: var(--c21-yellow); font-size: 0.7rem; line-height: 1.2;">Carbo Gel</div>
+                            <div style="color: #999; font-size: 0.6rem;">60 ml · pomeranč</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid var(--c21-yellow); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--c21-yellow); color: #1a1a1a; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px; font-weight: 700;">C2:1</div>
+                            <div style="font-weight: 700; color: var(--c21-yellow); font-size: 0.7rem; line-height: 1.2;">Gel + Na</div>
+                            <div style="color: #999; font-size: 0.6rem;">60 ml · citron</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid var(--c21-yellow); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--c21-yellow); color: #1a1a1a; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px; font-weight: 700;">C2:1</div>
+                            <div style="font-weight: 700; color: var(--c21-yellow); font-size: 0.7rem; line-height: 1.2;">Gel kofein</div>
+                            <div style="color: #999; font-size: 0.6rem;">60 ml · cola</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid var(--c21-yellow); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--c21-yellow); color: #1a1a1a; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px; font-weight: 700;">C2:1</div>
+                            <div style="font-weight: 700; color: var(--c21-yellow); font-size: 0.7rem; line-height: 1.2;">Jelly</div>
+                            <div style="color: #999; font-size: 0.6rem;">50 g · tropic</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid var(--c21-yellow); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--c21-yellow); color: #1a1a1a; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px; font-weight: 700;">C2:1</div>
+                            <div style="font-weight: 700; color: var(--c21-yellow); font-size: 0.7rem; line-height: 1.2;">Chews</div>
+                            <div style="color: #999; font-size: 0.6rem;">34 g · pomeranč</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid var(--c21-yellow); border-radius: 8px; padding: 8px 4px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--c21-yellow); color: #1a1a1a; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px; font-weight: 700;">C2:1</div>
+                            <div style="font-weight: 700; color: var(--c21-yellow); font-size: 0.7rem; line-height: 1.2;">Bar + Na</div>
+                            <div style="color: #999; font-size: 0.6rem;">45 g · arašíd</div>
+                        </div>
+                    </div>
+                    <div style="height: 8px; background: linear-gradient(180deg, #8b6914, #a07828); border-radius: 0 0 6px 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>
+                </div>
+
+                <!-- POLICE 3 -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                        <span style="background: var(--enervit-dark); color: white; padding: 3px 12px; border-radius: 15px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;">POLICE 3</span>
+                        <span style="color: #888; font-size: 0.75rem;">Nápoje, minerály a regenerace</span>
+                    </div>
+                    <div style="display: flex; gap: 5px; padding: 10px 8px 14px; background: white; border-radius: 10px 10px 0 0; min-height: 80px; align-items: flex-end;">
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 3px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.65rem; line-height: 1.2;">Isotonic</div>
+                            <div style="color: #999; font-size: 0.55rem;">420 g · citron</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 3px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.65rem; line-height: 1.2;">Isotonic</div>
+                            <div style="color: #999; font-size: 0.55rem;">420 g · pom.</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); border: 2px solid var(--c21-yellow); border-radius: 8px; padding: 8px 3px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--c21-yellow); color: #1a1a1a; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px; font-weight: 700;">C2:1</div>
+                            <div style="font-weight: 700; color: var(--c21-yellow); font-size: 0.65rem; line-height: 1.2;">Isocarb</div>
+                            <div style="color: #999; font-size: 0.55rem;">650 g · citron</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #e8f8f8 0%, #d4f0f0 100%); border: 2px solid var(--purepro-teal); border-radius: 8px; padding: 8px 3px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--purepro-teal); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">PURE</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.65rem; line-height: 1.2;">Electrolytes</div>
+                            <div style="color: #999; font-size: 0.55rem;">16×4 g · citron</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 3px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.65rem; line-height: 1.2;">Magnesium</div>
+                            <div style="color: #999; font-size: 0.55rem;">10×15 g · citr.</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 3px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.65rem; line-height: 1.2;">R2 Recov.</div>
+                            <div style="color: #999; font-size: 0.55rem;">400 g · pom.</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 3px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.65rem; line-height: 1.2;">R2 Recov.</div>
+                            <div style="color: #999; font-size: 0.55rem;">50 g · pom.</div>
+                        </div>
+                        <div style="flex: 1; background: linear-gradient(180deg, #fff0f0 0%, #fce4e4 100%); border: 2px solid var(--enervit-red); border-radius: 8px; padding: 8px 3px 6px; text-align: center;">
+                            <div style="font-size: 0.55rem; background: var(--enervit-red); color: white; border-radius: 8px; padding: 1px 4px; display: inline-block; margin-bottom: 3px;">SPORT</div>
+                            <div style="font-weight: 700; color: var(--enervit-dark); font-size: 0.65rem; line-height: 1.2;">After Sport</div>
+                            <div style="color: #999; font-size: 0.55rem;">10×15 g · citr.</div>
+                        </div>
+                    </div>
+                    <div style="height: 8px; background: linear-gradient(180deg, #8b6914, #a07828); border-radius: 0 0 6px 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>
+                </div>
+            </div>
+
+            <!-- Legend & Stats -->
+            <div style="display: flex; gap: 25px; margin-top: 20px; align-items: flex-start;">
+                <div class="highlight-box" style="flex: 1; margin: 0;">
+                    <h4 style="margin-bottom: 10px;">📊 Rozložení sortimentu:</h4>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            <span style="background: var(--enervit-red); color: white; padding: 2px 10px; border-radius: 10px; font-size: 0.75rem; font-weight: 600;">SPORT</span>
+                            <span style="font-size: 0.85rem;">13 SKU</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            <span style="background: #1a1a1a; color: var(--c21-yellow); border: 1px solid var(--c21-yellow); padding: 2px 10px; border-radius: 10px; font-size: 0.75rem; font-weight: 600;">C2:1PRO</span>
+                            <span style="font-size: 0.85rem;">7 SKU</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            <span style="background: var(--purepro-teal); color: white; padding: 2px 10px; border-radius: 10px; font-size: 0.75rem; font-weight: 600;">PURE-PRO</span>
+                            <span style="font-size: 0.85rem;">1 SKU</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="success-box" style="flex: 1; margin: 0;">
+                    <h4 style="margin-bottom: 10px;">✓ Výhody planogramu:</h4>
+                    <ul style="margin-left: 18px; font-size: 0.9rem;">
+                        <li>Jasné vizuální oddělení produktových řad</li>
+                        <li>Logické řazení: příprava → výkon → regenerace</li>
+                        <li>Optimálně využitá police 90 cm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>www.enervit.cz</span>
+            <span>ENERVIT x INTERSPORT CZ</span>
+            <div class="slide-number">9</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 10: Podpora prodeje -->
+    <div class="slide" id="slide-9">
         <div class="slide-header">
             <h2>Co vám poskytneme</h2>
             <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
             </div>
         </div>
         <div class="slide-content">
@@ -1660,78 +1898,13 @@
 
                     <h3 style="color: var(--enervit-dark); margin: 25px 0 20px;">🚚 Logistika a servis</h3>
                     <ul class="check-list">
-                        <li>Expedice do 5 pracovních dnů</li>
-                        <li>Výměna zboží 60 dní před expirací</li>
+                        <li><strong>Expedice do 3 pracovních dnů</strong> (skladové položky)</li>
+                        <li><strong>Individuální závozy</strong> na každou prodejnu</li>
+                        <li><strong>Doprava zdarma</strong> při objednávce nad 5 000 Kč</li>
+                        <li><strong>Výměna zboží 60 dní před expirací</strong> — nulové riziko</li>
+                        <li>Splatnost faktur 30 dní, bez minimální objednávky</li>
                         <li>B2B portál pro snadné objednávky</li>
                         <li>Dedikovaný account manager</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="slide-footer">
-            <span>www.enervit.cz</span>
-            <span>ENERVIT x INTERSPORT CZ</span>
-            <div class="slide-number">9</div>
-        </div>
-    </div>
-
-    <!-- SLIDE 10: Plán spolupráce -->
-    <div class="slide" id="slide-9">
-        <div class="slide-header">
-            <h2>Navrhovaný plán spolupráce</h2>
-            <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
-                <img src="intersport-logo.svg" alt="INTERSPORT" class="logo-img intersport">
-            </div>
-        </div>
-        <div class="slide-content">
-            <div class="intro-text">
-                Navrhujeme <strong>postupný rollout</strong> začínající pilotním projektem, který minimalizuje riziko a umožňuje optimalizaci před celoplošným nasazením.
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="dot"></div>
-                    <h5>Fáze 1: Pilot</h5>
-                    <p>5–8 vybraných prodejen v Praze a krajských městech</p>
-                    <p style="color: var(--enervit-red); font-weight: bold; margin-top: 5px;">Únor 2026</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="dot"></div>
-                    <h5>Fáze 2: Vyhodnocení</h5>
-                    <p>Analýza prodejů, zpětná vazba, optimalizace sortimentu</p>
-                    <p style="color: var(--enervit-red); font-weight: bold; margin-top: 5px;">Duben 2026</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="dot"></div>
-                    <h5>Fáze 3: Rozšíření</h5>
-                    <p>Rollout do 20–25 prodejen</p>
-                    <p style="color: var(--enervit-red); font-weight: bold; margin-top: 5px;">Červen 2026</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="dot"></div>
-                    <h5>Fáze 4: Full scale</h5>
-                    <p>Všech 38 prodejen INTERSPORT CZ</p>
-                    <p style="color: var(--enervit-red); font-weight: bold; margin-top: 5px;">Září 2026</p>
-                </div>
-            </div>
-
-            <div class="grid-2" style="margin-top: 25px;">
-                <div class="success-box">
-                    <h4 style="margin-bottom: 12px;">✓ Měřitelné cíle pilotní fáze:</h4>
-                    <ul style="margin-left: 18px;">
-                        <li>Min. 50 ks prodaných/měsíc/prodejna</li>
-                        <li>Pozitivní zpětná vazba personálu (80 %+)</li>
-                        <li>Nulové reklamace kvality</li>
-                        <li>Opakované objednávky do 60 dnů</li>
-                    </ul>
-                </div>
-                <div class="highlight-box">
-                    <h4 style="margin-bottom: 12px;">📋 Kritéria pro rozšíření:</h4>
-                    <ul style="margin-left: 18px;">
-                        <li>Dosažení KPIs z pilotní fáze</li>
-                        <li>Schválení central buyingem</li>
-                        <li>Připravenost POS pro všechny prodejny</li>
-                        <li>Dokončení školení personálu</li>
                     </ul>
                 </div>
             </div>
@@ -1743,12 +1916,80 @@
         </div>
     </div>
 
-    <!-- SLIDE 11: Shrnutí a kontakt -->
+    <!-- SLIDE 11: Klíčové podmínky spolupráce -->
     <div class="slide" id="slide-10">
+        <div class="slide-header">
+            <h2>Klíčové podmínky spolupráce</h2>
+            <div class="logos">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
+                <img src="intersport-logo.svg" alt="INTERSPORT" class="logo-img intersport">
+            </div>
+        </div>
+        <div class="slide-content">
+            <div class="intro-text">
+                Nabízíme <strong>transparentní a flexibilní podmínky</strong> navržené tak, aby spolupráce byla pro INTERSPORT bezriziková a logisticky jednoduchá.
+            </div>
+            <div class="grid-3" style="margin-top: 25px;">
+                <div class="stat-card highlight" style="padding: 35px 25px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🔄</div>
+                    <div class="number" style="font-size: 2rem;">60 dní</div>
+                    <div class="label" style="font-size: 1.1rem; margin-top: 12px;">Převíjení produktů před expirací</div>
+                    <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.85;">Bezplatná výměna zboží <strong>60 dní před datem spotřeby</strong>. Nulové riziko prošlých produktů na prodejně.</div>
+                </div>
+                <div class="stat-card highlight" style="padding: 35px 25px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🚚</div>
+                    <div class="number" style="font-size: 1.6rem;">Individuální závozy</div>
+                    <div class="label" style="font-size: 1.1rem; margin-top: 12px;">Na každou prodejnu zvlášť</div>
+                    <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.85;">Doručení přímo na jednotlivé prodejny — bez nutnosti centrálního skladu a vlastní redistribuce.</div>
+                </div>
+                <div class="stat-card highlight" style="padding: 35px 25px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">⚡</div>
+                    <div class="number" style="font-size: 2rem;">SLA 3 dny</div>
+                    <div class="label" style="font-size: 1.1rem; margin-top: 12px;">Dodání skladových položek</div>
+                    <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.85;">Objednávky expedujeme <strong>do 3 pracovních dnů</strong> od přijetí (u položek dostupných na skladě).</div>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 30px;">
+                <div class="success-box">
+                    <h4 style="margin-bottom: 12px;">✓ Součástí spolupráce:</h4>
+                    <ul style="margin-left: 18px;">
+                        <li><strong>Bez minimální objednávky</strong> — objednávejte dle potřeby</li>
+                        <li><strong>Vstupní balíček vzorků</strong> pro zaměstnance prodejen</li>
+                        <li>B2B portál pro snadné objednávky</li>
+                        <li>Dedikovaný account manager</li>
+                        <li>POS materiály a školení personálu zdarma</li>
+                        <li>Marketingová podpora a společné promo akce</li>
+                    </ul>
+                </div>
+                <div class="highlight-box">
+                    <h4 style="margin-bottom: 12px;">📋 Obchodní podmínky:</h4>
+                    <ul style="margin-left: 18px;">
+                        <li><strong>Sleva:</strong> 35 % z doporučené MOC</li>
+                        <li><strong>Splatnost:</strong> 30 dní od vystavení faktury</li>
+                        <li><strong>Doprava:</strong> zdarma při objednávce nad 5 000 Kč</li>
+                        <li><strong>Dodání:</strong> individuálně na každou prodejnu</li>
+                        <li><strong>Expediční lhůta:</strong> 3 pracovní dny (skladem)</li>
+                        <li><strong>Výměna zboží:</strong> 60 dní před expirací</li>
+                        <li><strong>Min. objednávka:</strong> bez limitu</li>
+                        <li><strong>Objednávky:</strong> B2B portál / e-mail / telefon</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>www.enervit.cz</span>
+            <span>ENERVIT x INTERSPORT CZ</span>
+            <div class="slide-number">11</div>
+        </div>
+    </div>
+
+    <!-- SLIDE 12: Shrnutí a kontakt -->
+    <div class="slide" id="slide-11">
         <div class="slide-header">
             <h2>Shrnutí nabídky</h2>
             <div class="logos">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" class="logo-img enervit-on-red">
                 <img src="intersport-logo.svg" alt="INTERSPORT" class="logo-img intersport">
             </div>
         </div>
@@ -1773,8 +2014,12 @@
                             <li>Tři specializované produktové řady</li>
                             <li>35 % slevu z doporučené maloobchodní ceny</li>
                             <li>Kompletní marketingovou a POS podporu</li>
-                            <li>Školení personálu a ongoing support</li>
-                            <li>Bezrizikovou výměnu zboží před expirací</li>
+                            <li>Školení personálu + vstupní balíček vzorků</li>
+                            <li><strong>Bezplatnou výměnu zboží 60 dní před expirací</strong></li>
+                            <li><strong>Individuální závozy na každou prodejnu</strong></li>
+                            <li><strong>Dodání do 3 pracovních dnů</strong> (skladové položky)</li>
+                            <li><strong>Doprava zdarma</strong> nad 5 000 Kč</li>
+                            <li>Splatnost 30 dní, bez minimální objednávky</li>
                             <li>Dedikovaného account managera</li>
                         </ul>
                     </div>
@@ -1789,7 +2034,7 @@
                         <p><strong>Tel:</strong> +420 724 963 739</p>
                         <p><strong>E-mail:</strong> calda.karolina@enervit.cz</p>
                         <hr style="margin: 18px 0; border: none; border-top: 1px solid #ddd;">
-                        <img src="enervit-logo-color.svg" alt="ENERVIT" style="height: 30px; margin-bottom: 10px;">
+                        <div style="background: var(--enervit-red); display: inline-block; padding: 6px 15px; border-radius: 6px; margin-bottom: 10px;"><img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 22px;"></div>
                         <p style="font-size: 0.9rem; color: #666;">VITAR Sport, s.r.o.</p>
                         <p style="font-size: 0.85rem; color: #888;">Exkluzivní distributor ENERVIT pro ČR a SR</p>
                         <p style="font-size: 0.85rem; color: #888;">www.enervit.cz</p>
@@ -1803,21 +2048,23 @@
         <div class="slide-footer">
             <span>www.enervit.cz</span>
             <span>ENERVIT x INTERSPORT CZ</span>
-            <div class="slide-number">11</div>
+            <div class="slide-number">12</div>
         </div>
     </div>
 
-    <!-- SLIDE 12: Closing -->
-    <div class="slide cover-slide" id="slide-11" style="background: linear-gradient(135deg, var(--enervit-dark) 0%, #1a1a2e 100%);">
-        <img src="enervit-logo-color.svg" alt="ENERVIT" class="main-logo">
+    <!-- SLIDE 13: Closing -->
+    <div class="slide cover-slide" id="slide-12" style="background: linear-gradient(135deg, var(--enervit-dark) 0%, #1a1a2e 100%);">
+        <div style="background: var(--enervit-red); padding: 15px 35px; border-radius: 12px; display: inline-block;">
+            <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 50px;">
+        </div>
         <div class="tagline">The Positive Nutrition Company</div>
         <h1 style="margin-top: 50px;">Děkujeme za váš čas</h1>
         <div class="subtitle" style="opacity: 0.9; max-width: 700px;">
             Věříme, že ENERVIT bude skvělým doplněním sortimentu INTERSPORT a společně posílíme pozici lídra na českém sportovním trhu.
         </div>
         <div style="margin-top: 60px; display: flex; gap: 30px; justify-content: center; align-items: center;">
-            <div class="partner-box" style="background: white;">
-                <img src="enervit-logo-color.svg" alt="ENERVIT" style="height: 35px;">
+            <div class="partner-box" style="background: var(--enervit-red);">
+                <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 35px;">
             </div>
             <span style="font-size: 1.5rem; opacity: 0.6;">×</span>
             <div class="partner-box" style="background: white;">
