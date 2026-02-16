@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>ENERVIT - Obchodní nabídka pro DECATHLON CZ</title>
+    <style>
+        @page {
+            size: 338.67mm 190.5mm; /* 16:9 ratio */
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        
+        :root {
+            --enervit-red: #E30613;
+            --enervit-dark: #232F5D;
+            --c21-yellow: #FFEB03;
+            --purepro-teal: #16829a;
+            --decathlon-blue: #3642b8;
+            --slide-width: 338.67mm;
+            --slide-height: 190.5mm;
+        }
+        
+        html, body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+            background: #f0f0f0;
+        }
+        
+        .slide {
+            width: var(--slide-width);
+            height: var(--slide-height);
+            padding: 0;
+            page-break-after: always;
+            page-break-inside: avoid;
+            position: relative;
+            overflow: hidden;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .slide:last-child {
+            page-break-after: auto;
+        }
+        
+        /* Cover slide */
+        .cover-slide {
+            background: linear-gradient(135deg, #E30613 0%, #8b0000 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25mm 40mm;
+        }
+        
+        .cover-slide .main-logo {
+            height: 50px;
+            background: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .cover-slide .tagline {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+        
+        .cover-slide h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .cover-slide .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .cover-slide .partner-logos {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .cover-slide .partner-box {
+            background: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+        
+        .cover-slide .partner-box img {
+            height: 30px;
+        }
+        
+        .cover-slide .plus {
+            font-size: 20px;
+            opacity: 0.8;
+        }
+        
+        .cover-slide .note {
+            margin-top: 30px;
+            font-size: 11px;
+            opacity: 0.8;
+        }
+        
+        /* Regular slides */
+        .slide-header {
+            background: linear-gradient(135deg, #E30613 0%, #c00510 100%);
+            color: white;
+            padding: 14px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .slide-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .slide-header .logos {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .slide-header .logo-img {
+            height: 32px;
+            background: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+        }
+        
+        .slide-content {
+            padding: 18px 35px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .slide-footer {
+            background: #232F5D;
+            color: white;
+            padding: 10px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+        
+        .slide-number {
+            background: #E30613;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        /* Intro text */
+        .intro-text {
+            background: #232F5D;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            font-size: 13px;
+        }
+        
+        .intro-text strong {
+            color: #E30613;
+        }
+        
+        /* Grids */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        /* Cards */
+        .stat-card {
+            background: #232F5D;
+            color: white;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .stat-card .number {
+            font-size: 28px;
+            font-weight: 800;
+            color: #E30613;
+        }
+        
+        .stat-card .label {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        
+        .stat-card.highlight {
+            background: linear-gradient(135deg, #E30613 0%, #c00510 100%);
+        }
+        
+        .stat-card.highlight .number {
+            color: white;
+        }
+        
+        .benefit-card {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .benefit-card .icon {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+        
+        .benefit-card h4 {
+            color: #232F5D;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        
+        .benefit-card p {
+            font-size: 11px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        /* Product line cards */
+        .product-line-card {
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            color: white;
+        }
+        
+        .product-line-card.enervit-sport {
+            background: linear-gradient(135deg, #E30613 0%, #c00510 100%);
+        }
+        
+        .product-line-card.c21pro {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            border: 2px solid #FFEB03;
+        }
+        
+        .product-line-card.c21pro h3 {
+            color: #FFEB03;
+        }
+        
+        .product-line-card.purepro {
+            background: linear-gradient(135deg, #16829a 0%, #0d5c6d 100%);
+        }
+        
+        .product-line-card .line-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 9px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        
+        .product-line-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .product-line-card .line-desc {
+            font-size: 12px;
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+        
+        .product-line-card .products-list {
+            background: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        
+        .product-line-card .products-list h5 {
+            font-size: 10px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .product-line-card .products-list ul {
+            list-style: none;
+            font-size: 11px;
+        }
+        
+        .product-line-card .products-list li {
+            padding: 1px 0 1px 12px;
+            position: relative;
+        }
+        
+        .product-line-card .products-list li::before {
+            content: '•';
+            position: absolute;
+            left: 3px;
+        }
+        
+        /* Lists */
+        .check-list {
+            list-style: none;
+        }
+        
+        .check-list li {
+            padding: 5px 0 5px 22px;
+            position: relative;
+            border-bottom: 1px solid #eee;
+            font-size: 12px;
+        }
+        
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #E30613;
+            font-weight: bold;
+        }
+        
+        /* Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            border-left: 4px solid #E30613;
+            padding: 12px 18px;
+            border-radius: 0 8px 8px 0;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e0f0f5 100%);
+            border-left: 4px solid #16829a;
+            padding: 12px 18px;
+            border-radius: 0 8px 8px 0;
+            font-size: 12px;
+        }
+        
+        /* Ambassador */
+        .ambassador-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .ambassador-card {
+            text-align: center;
+            padding: 12px;
+        }
+        
+        .ambassador-card .photo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #E30613 0%, #232F5D 100%);
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .ambassador-card h4 {
+            font-size: 15px;
+            color: #232F5D;
+        }
+        
+        .ambassador-card .sport {
+            color: #E30613;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .ambassador-card .achievement {
+            font-size: 11px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        /* Category bar */
+        .category-bar {
+            display: flex;
+            height: 32px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .category-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 9px;
+        }
+        
+        .category-segment.pre { background: #ff6b6b; }
+        .category-segment.during { background: #E30613; }
+        .category-segment.recovery { background: #16829a; }
+        .category-segment.protein { background: #232F5D; }
+        
+        /* Product grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+        
+        .product-item {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .product-item .line-tag {
+            font-size: 7px;
+            padding: 2px 6px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+        
+        .product-item .line-tag.sport { background: #E30613; color: white; }
+        .product-item .line-tag.c21 { background: #1a1a1a; color: #FFEB03; }
+        .product-item .line-tag.pure { background: #16829a; color: white; }
+        
+        .product-item .product-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            margin-bottom: 4px;
+        }
+        
+        .product-item h5 {
+            font-size: 10px;
+            color: #232F5D;
+        }
+        
+        .product-item .price {
+            font-size: 11px;
+            color: #E30613;
+            font-weight: bold;
+        }
+        
+        /* Pricing table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        
+        .pricing-table th {
+            background: #232F5D;
+            color: white;
+            padding: 6px 10px;
+            text-align: left;
+        }
+        
+        .pricing-table td {
+            padding: 5px 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        /* Timeline */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0 10px;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 12%;
+            right: 12%;
+            height: 3px;
+            background: linear-gradient(90deg, #E30613, #16829a);
+        }
+        
+        .timeline-item {
+            text-align: center;
+            width: 22%;
+            position: relative;
+        }
+        
+        .timeline-item .dot {
+            width: 18px;
+            height: 18px;
+            background: #E30613;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #E30613;
+        }
+        
+        .timeline-item h5 {
+            font-size: 12px;
+            color: #232F5D;
+        }
+        
+        .timeline-item p {
+            font-size: 11px;
+            color: #666;
+        }
+        
+        /* Variants box */
+        .variant-box {
+            border-radius: 12px;
+            padding: 15px;
+        }
+        
+        .variant-box.blue {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e0f0f5 100%);
+            border-left: 4px solid #3642b8;
+        }
+        
+        .variant-box.red {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+            border-left: 4px solid #E30613;
+        }
+        
+        .variant-box h4 {
+            font-size: 12px;
+            color: #232F5D;
+            margin-bottom: 8px;
+        }
+        
+        .variant-box p {
+            font-size: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .variant-box ul {
+            margin-left: 15px;
+            font-size: 9px;
+            color: #555;
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: start;
+        }
+        
+        .contact-card {
+            background: #f5f5f5;
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .contact-card .avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #E30613 0%, #232F5D 100%);
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .contact-card .name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #232F5D;
+        }
+        
+        .contact-card .role {
+            color: #E30613;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .contact-card .divider {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 12px 0;
+        }
+        
+        .contact-card .info {
+            font-size: 11px;
+        }
+        
+        /* Closing slide */
+        .closing-slide {
+            background: linear-gradient(135deg, #232F5D 0%, #1a1a2e 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25mm 40mm;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #232F5D;
+            margin-bottom: 12px;
+        }
+        
+        h3.red {
+            color: #E30613;
+        }
+        
+        .variant-box h4 {
+            font-size: 14px;
+        }
+        
+        .variant-box p, .variant-box ul {
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Cover -->
+<div class="slide cover-slide">
+    <img src="enervit-logo-color.svg" alt="ENERVIT" class="main-logo">
+    <div class="tagline">The Positive Nutrition Company</div>
+    <h1>Obchodní nabídka pro DECATHLON CZ</h1>
+    <div class="subtitle">Prémiová sportovní výživa pro vaše zákazníky</div>
+    <div class="partner-logos">
+        <div class="partner-box">
+            <img src="enervit-logo-color.svg" alt="ENERVIT">
+        </div>
+        <div class="plus">+</div>
+        <div class="partner-box">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON">
+        </div>
+    </div>
+    <p class="note">
+        Tato prezentace obsahuje kompletní obchodní nabídku včetně cenových podmínek.<br>
+        V případě zájmu nás kontaktujte pro osobní prezentaci.
+    </p>
+</div>
+
+<!-- SLIDE 2: O značce -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>O značce ENERVIT</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="intro-text">
+            <strong>ENERVIT</strong> je prémiová italská značka sportovní výživy, která od roku 1954 vyvíjí produkty ve spolupráci s vrcholovými sportovci. Značka je distribuována ve <strong>44 zemích</strong> a je lídrem na italském trhu.
+        </div>
+        <div class="grid-2">
+            <div>
+                <h3 class="red" style="margin-bottom: 12px;">Co dělá ENERVIT výjimečným:</h3>
+                <ul class="check-list">
+                    <li><strong>70+ let zkušeností</strong> - jedna z nejstarších značek sportovní výživy v Evropě</li>
+                    <li><strong>Vědecký přístup</strong> - vlastní výzkumné centrum, spolupráce s univerzitami</li>
+                    <li><strong>Patentovaná technologie C2:1</strong> - maximální vstřebávání energie</li>
+                    <li><strong>Ambasadoři světové úrovně</strong> - Sinner, Pogačar, Pellegrino</li>
+                    <li><strong>Certifikovaná udržitelnost</strong> - EcoVadis Silver Medal</li>
+                    <li><strong>Kompletní portfolio</strong> - tři specializované produktové řady</li>
+                </ul>
+            </div>
+            <div>
+                <div class="grid-2" style="gap: 12px; margin-bottom: 15px;">
+                    <div class="stat-card">
+                        <div class="number">70+</div>
+                        <div class="label">Let zkušeností</div>
+                    </div>
+                    <div class="stat-card highlight">
+                        <div class="number">44</div>
+                        <div class="label">Zemí světa</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">80+</div>
+                        <div class="label">Produktů</div>
+                    </div>
+                    <div class="stat-card highlight">
+                        <div class="number">#1</div>
+                        <div class="label">Na italském trhu</div>
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Distributor pro ČR a SR:</strong><br>
+                    VITAR Sport, s.r.o. - exkluzivní distributor s kompletní podporou.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">2</div>
+    </div>
+</div>
+
+<!-- SLIDE 3: Ambasadoři -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>Ambasadoři světové úrovně</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="intro-text">
+            ENERVIT je volbou <strong>absolutních šampionů</strong> ve svých disciplínách. Spolupráce s elitními sportovci zajišťuje neustálý vývoj produktů v nejnáročnějších podmínkách.
+        </div>
+        <div class="ambassador-grid" style="margin-top: 15px;">
+            <div class="ambassador-card">
+                <div class="photo">🎾</div>
+                <h4>Jannik Sinner</h4>
+                <div class="sport">Tenis</div>
+                <div class="achievement"><strong>#1 ATP, 4x Grand Slam</strong><br>Australian Open 2024, 2025<br>Wimbledon 2025, US Open 2024</div>
+            </div>
+            <div class="ambassador-card">
+                <div class="photo">🚴</div>
+                <h4>Tadej Pogačar</h4>
+                <div class="sport">Cyklistika</div>
+                <div class="achievement"><strong>4x Tour de France</strong><br>2x mistr světa (2024, 2025)<br>Giro d'Italia 2024</div>
+            </div>
+            <div class="ambassador-card">
+                <div class="photo">⛷️</div>
+                <h4>Federico Pellegrino</h4>
+                <div class="sport">Běh na lyžích</div>
+                <div class="achievement"><strong>7x medailista MS</strong><br>Stříbro sprint MS 2025<br>Nejúspěšnější italský běžec</div>
+            </div>
+        </div>
+        <div class="success-box" style="margin-top: 20px; text-align: center;">
+            <strong>Marketingový potenciál:</strong> Spolupráce s globálními hvězdami zvyšuje hodnotu značky a přitažlivost pro zákazníky DECATHLON, kteří se zajímají o cyklistiku, tenis, běh a zimní sporty.
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">3</div>
+    </div>
+</div>
+
+<!-- SLIDE 4: Produktové řady -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>Tři specializované produktové řady</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="intro-text">
+            Portfolio ENERVIT je rozděleno do <strong>tří specializovaných produktových řad</strong> - od rekreačních běžců po profesionální vytrvalce.
+        </div>
+        <div class="grid-3" style="margin-top: 12px;">
+            <div class="product-line-card enervit-sport">
+                <div class="line-badge">ZÁKLADNÍ ŘADA</div>
+                <h3>ENERVIT Sport</h3>
+                <div class="line-desc">Kompletní portfolio pro každodenní sportování</div>
+                <div class="products-list">
+                    <h5>KLÍČOVÉ PRODUKTY:</h5>
+                    <ul>
+                        <li>Gel 25 ml bez/s kofeinem</li>
+                        <li>Carbo Tablets</li>
+                        <li>Competition Bar</li>
+                        <li>Salt Caps, Magnesium</li>
+                        <li>Isotonic Drink</li>
+                        <li>R2 Recovery Drink</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-line-card c21pro">
+                <div class="line-badge">MAX. VÝKON</div>
+                <h3>C2:1PRO</h3>
+                <div class="line-desc">Patentovaná technologie pro závodníky</div>
+                <div class="products-list">
+                    <h5>KLÍČOVÉ PRODUKTY:</h5>
+                    <ul>
+                        <li>Carbo Gel C2:1 60 ml</li>
+                        <li>Carbo Bar C2:1</li>
+                        <li>Isocarb C2:1</li>
+                        <li>Carbo Chews C2:1</li>
+                        <li>Carbo Jelly C2:1</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-line-card purepro">
+                <div class="line-badge">TRÉNINK</div>
+                <h3>PURE-PRO</h3>
+                <div class="line-desc">Čistá výživa pro náročné tréninky</div>
+                <div class="products-list">
+                    <h5>KLÍČOVÉ PRODUKTY:</h5>
+                    <ul>
+                        <li>Electrolytes Boost</li>
+                        <li>Pre-Workout Boost</li>
+                        <li>100% Whey Protein</li>
+                        <li>BCAA, Creatine</li>
+                        <li>100% L-Glutamin</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="highlight-box" style="margin-top: 15px; text-align: center;">
+            <strong>Výhoda pro DECATHLON:</strong> Tři produktové řady se vzájemně doplňují - sportovec může kombinovat produkty dle potřeb a fáze tréninku či závodu.
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">4</div>
+    </div>
+</div>
+
+<!-- SLIDE 5: Portfolio -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>Kompletní portfolio pro každou fázi sportu</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="category-bar">
+            <div class="category-segment pre" style="width: 20%;">PŘED SPORTEM</div>
+            <div class="category-segment during" style="width: 40%;">BĚHEM SPORTU</div>
+            <div class="category-segment recovery" style="width: 25%;">REGENERACE</div>
+            <div class="category-segment protein" style="width: 15%;">VITAMÍNY</div>
+        </div>
+        <div class="grid-4" style="margin-top: 12px;">
+            <div class="benefit-card">
+                <div class="icon" style="color: #ff6b6b;">⚡</div>
+                <h4>Před sportem</h4>
+                <p><strong>ENERVIT:</strong> PRE Sport, Carbo Flow<br><strong>PURE-PRO:</strong> Pre-Workout Boost</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon" style="color: #E30613;">🔥</div>
+                <h4>Energie během sportu</h4>
+                <p><strong>ENERVIT:</strong> Gel, Isotonic<br><strong>C2:1PRO:</strong> Carbo Gel, Bars</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon" style="color: #16829a;">💪</div>
+                <h4>Regenerace</h4>
+                <p><strong>ENERVIT:</strong> R2 Recovery<br><strong>PURE-PRO:</strong> Whey Protein, BCAA</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon" style="color: #232F5D;">🧪</div>
+                <h4>Vitamíny a minerály</h4>
+                <p><strong>Minerály:</strong> Salt Caps, Magnesium<br><strong>PURE-PRO:</strong> Electrolytes</p>
+            </div>
+        </div>
+        <div class="success-box" style="margin-top: 15px;">
+            <h4 style="color: #232F5D; margin-bottom: 6px;">🔬 Technologie C2:1 - konkurenční výhoda</h4>
+            <p>Patentovaný poměr sacharidů <strong>maltodextrin:fruktóza = 2:1</strong> umožňuje až o <strong>40 % vyšší vstřebávání energie</strong> než běžné produkty.</p>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">5</div>
+    </div>
+</div>
+
+<!-- SLIDE 6: Proč ENERVIT -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>Proč ENERVIT pro DECATHLON?</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="intro-text">
+            ENERVIT přináší <strong>synergii</strong> s vaším sortimentem a posiluje pozici DECATHLON jako <strong>kompletního odborníka na sport</strong>.
+        </div>
+        <div class="grid-3" style="margin-top: 12px;">
+            <div class="benefit-card" style="background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);">
+                <div class="icon">💰</div>
+                <h4>Prémiové produkty</h4>
+                <p><strong>35 % sleva z MOC.</strong> Vyšší prodejní cena = vyšší zisk.</p>
+            </div>
+            <div class="benefit-card" style="background: linear-gradient(135deg, #f5fff5 0%, #e8ffe8 100%);">
+                <div class="icon">🎯</div>
+                <h4>Široká zákaznická základna</h4>
+                <p>Miliony zákazníků DECATHLON = <strong>obrovský potenciál</strong>.</p>
+            </div>
+            <div class="benefit-card" style="background: linear-gradient(135deg, #f5f5ff 0%, #e8e8ff 100%);">
+                <div class="icon">🏆</div>
+                <h4>Prémiový doplněk</h4>
+                <p>ENERVIT jako <strong>prémiová alternativa</strong> k vlastním značkám.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">📦</div>
+                <h4>Kompletní podpora</h4>
+                <p>POS materiály, školení personálu - <strong>vše zajistíme</strong>.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">🔄</div>
+                <h4>Bez rizika zásob</h4>
+                <p><strong>Výměna zboží</strong> před expirací. Flexibilní objednávky.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon">📈</div>
+                <h4>Růstový segment</h4>
+                <p>Trh sportovní výživy roste <strong>+8 % ročně</strong>.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">6</div>
+    </div>
+</div>
+
+<!-- SLIDE 7: Cenové podmínky -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>Cenové podmínky</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="grid-2">
+            <div>
+                <h3 style="margin-bottom: 10px;">Nákupní podmínky</h3>
+                <p style="margin-bottom: 12px; font-size: 11px;">Nabízíme <strong>35 % slevu z doporučené maloobchodní ceny</strong> (MOC s DPH).</p>
+                <table class="pricing-table">
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Řada</th>
+                        <th>MOC</th>
+                        <th>Vaše cena</th>
+                    </tr>
+                    <tr>
+                        <td>Carbo Gel C2:1 60 ml</td>
+                        <td><span style="color: #FFEB03; font-weight: bold;">C2:1</span></td>
+                        <td>87 Kč</td>
+                        <td><strong>56,55 Kč</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Gel 25 ml</td>
+                        <td><span style="color: #E30613; font-weight: bold;">Sport</span></td>
+                        <td>54 Kč</td>
+                        <td><strong>35,10 Kč</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Competition Bar 30 g</td>
+                        <td><span style="color: #E30613; font-weight: bold;">Sport</span></td>
+                        <td>48 Kč</td>
+                        <td><strong>31,20 Kč</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Isotonic Drink 420 g</td>
+                        <td><span style="color: #E30613; font-weight: bold;">Sport</span></td>
+                        <td>339 Kč</td>
+                        <td><strong>220,35 Kč</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Electrolytes Boost</td>
+                        <td><span style="color: #16829a; font-weight: bold;">PURE</span></td>
+                        <td>239 Kč</td>
+                        <td><strong>155,35 Kč</strong></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <div class="stat-card highlight" style="margin-bottom: 12px;">
+                    <div class="number">35 %</div>
+                    <div class="label">Sleva z MOC</div>
+                </div>
+                <div class="stat-card" style="margin-bottom: 12px;">
+                    <div class="number">80+</div>
+                    <div class="label">Produktů v portfoliu</div>
+                </div>
+                <div class="success-box">
+                    <h4 style="margin-bottom: 8px;">✓ Co je zahrnuto v ceně:</h4>
+                    <ul style="margin-left: 15px; font-size: 10px;">
+                        <li>POS materiály pro prodejny</li>
+                        <li>Školení personálu (online + prezenční)</li>
+                        <li>Výměna zboží 60 dní před expirací</li>
+                        <li>Marketingová podpora</li>
+                        <li>Dedikovaný account manager</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">7</div>
+    </div>
+</div>
+
+<!-- SLIDE 8: Sortiment -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>Doporučený sortiment pro DECATHLON</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="intro-text">
+            Navrhujeme optimální mix <strong>25–30 SKU</strong>. Sortiment zahrnuje všechny tři produktové řady s důrazem na bestsellery.
+        </div>
+        <div class="product-grid" style="margin-top: 10px;">
+            <div class="product-item">
+                <div class="line-tag c21">C2:1PRO</div>
+                <img src="https://enervit.kleecks-cdn.com/media/catalog/product/e/n/enervit-carbo-gel-foil-orange-_1.png" alt="Gel" class="product-img">
+                <h5>Carbo Gel C2:1</h5>
+                <div class="price">87 Kč</div>
+            </div>
+            <div class="product-item">
+                <div class="line-tag sport">SPORT</div>
+                <img src="https://enervit.kleecks-cdn.com/media/catalog/product/9/8/98988_gelarancia_01_786x818_7_2.png" alt="Gel" class="product-img">
+                <h5>Gel 25 ml</h5>
+                <div class="price">54 Kč</div>
+            </div>
+            <div class="product-item">
+                <div class="line-tag sport">SPORT</div>
+                <img src="https://enervit.kleecks-cdn.com/media/catalog/product/9/9/99118_competitionbarbanana_01_786x818_7.png" alt="Bar" class="product-img">
+                <h5>Competition Bar</h5>
+                <div class="price">48 Kč</div>
+            </div>
+            <div class="product-item">
+                <div class="line-tag sport">SPORT</div>
+                <img src="https://enervit.kleecks-cdn.com/media/catalog/product/9/0/90905_isotonicdrinkbarattoloarancia_01_786x818_7_2.png" alt="Isotonic" class="product-img">
+                <h5>Isotonic Drink</h5>
+                <div class="price">339 Kč</div>
+            </div>
+            <div class="product-item">
+                <div class="line-tag c21">C2:1PRO</div>
+                <img src="https://enervit.kleecks-cdn.com/media/catalog/product/e/n/enervit-barattolo-alto-isocarb_1.png" alt="Isocarb" class="product-img">
+                <h5>Isocarb C2:1</h5>
+                <div class="price">585 Kč</div>
+            </div>
+            <div class="product-item">
+                <div class="line-tag sport">SPORT</div>
+                <img src="https://enervit.kleecks-cdn.com/media/catalog/product/9/0/90524_presport_arancia_01_786x818_7.png" alt="PRE" class="product-img">
+                <h5>PRE Sport</h5>
+                <div class="price">56 Kč</div>
+            </div>
+            <div class="product-item">
+                <div class="line-tag sport">SPORT</div>
+                <img src="https://enervit.kleecks-cdn.com/media/catalog/product/9/0/90790_magnesiumpotassium_01_786x818_7.png" alt="Mg" class="product-img">
+                <h5>Magnesium Sport</h5>
+                <div class="price">223 Kč</div>
+            </div>
+            <div class="product-item">
+                <div class="line-tag sport">SPORT</div>
+                <img src="https://www.enervit.com/media/catalog/product/s/a/salt_caps.png" alt="Salt" class="product-img">
+                <h5>Salt Caps</h5>
+                <div class="price">469 Kč</div>
+            </div>
+            <div class="product-item">
+                <div class="line-tag pure">PURE-PRO</div>
+                <img src="https://enervit.kleecks-cdn.com/media/catalog/product/e/l/electrolytes-1-786x818.png" alt="Electrolytes" class="product-img">
+                <h5>Electrolytes</h5>
+                <div class="price">239 Kč</div>
+            </div>
+            <div class="product-item">
+                <div class="line-tag sport">SPORT</div>
+                <img src="https://enervit.kleecks-cdn.com/media/catalog/product/9/6/96613_borracciaprofessional750_01_786x818_7.png" alt="Bottle" class="product-img">
+                <h5>Láhev ENERVIT</h5>
+                <div class="price">79 Kč</div>
+            </div>
+        </div>
+        <div class="highlight-box" style="margin-top: 12px;">
+            <strong>Doporučená hodnota prvního nákupu:</strong> ~15 000–25 000 Kč na prodejnu (v nákupních cenách)
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">8</div>
+    </div>
+</div>
+
+<!-- SLIDE 9: Podpora -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>Co vám poskytneme</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="intro-text">
+            Jako váš partner zajišťujeme <strong>kompletní podporu prodeje</strong> - od POS materiálů přes školení až po marketingovou spolupráci.
+        </div>
+        <div class="grid-2" style="margin-top: 12px;">
+            <div>
+                <h3 style="margin-bottom: 10px;">📦 POS materiály</h3>
+                <ul class="check-list">
+                    <li>Podlahové stojany a regálové displeje</li>
+                    <li>Shelf-talkery a wobblery</li>
+                    <li>Plakáty a bannery s ambasadory</li>
+                    <li>Produktové letáky pro zákazníky</li>
+                    <li>Digitální materiály pro e-shop</li>
+                </ul>
+                <h3 style="margin: 15px 0 10px;">🎓 Školení personálu</h3>
+                <ul class="check-list">
+                    <li>Online školící modul (30 min)</li>
+                    <li>Produktové materiály a dokumentace</li>
+                    <li>Certifikace "ENERVIT Expert"</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 10px;">📣 Marketingová podpora</h3>
+                <ul class="check-list">
+                    <li>Účast na sportovních akcích a závodech</li>
+                    <li>Možnost společných promo kampaní</li>
+                    <li>Podpora na sociálních sítích</li>
+                </ul>
+                <h3 style="margin: 15px 0 10px;">🚚 Logistika a servis</h3>
+                <ul class="check-list">
+                    <li>Expedice do 5 pracovních dnů</li>
+                    <li>Výměna zboží 60 dní před expirací</li>
+                    <li>B2B portál pro snadné objednávky</li>
+                    <li>Dedikovaný account manager</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">9</div>
+    </div>
+</div>
+
+<!-- SLIDE 10: Plán spolupráce -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>Navrhovaný plán spolupráce</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="intro-text">
+            Nabízíme <strong>dvě varianty spolupráce</strong>, které lze kombinovat nebo realizovat postupně dle vašich preferencí.
+        </div>
+        <div class="grid-2" style="margin: 12px 0;">
+            <div class="variant-box blue">
+                <h4>🏪 Varianta A: Prodejny</h4>
+                <p>Postupný rollout do kamenných prodejen DECATHLON</p>
+                <ul>
+                    <li>Pilot v 3–5 vybraných prodejnách</li>
+                    <li>Vyhodnocení po 2–3 měsících</li>
+                    <li>Rozšíření na další prodejny</li>
+                    <li>Full scale do všech prodejen</li>
+                </ul>
+            </div>
+            <div class="variant-box red">
+                <h4>🌐 Varianta B: Marketplace First</h4>
+                <p>Start na DECATHLON Marketplace, poté rozšíření</p>
+                <ul>
+                    <li>Rychlé spuštění na e-shopu</li>
+                    <li>Testování poptávky online</li>
+                    <li>Optimalizace sortimentu dle dat</li>
+                    <li>Postupný rollout do prodejen</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="dot"></div>
+                <h5>Fáze 1: Start</h5>
+                <p>Marketplace nebo pilot</p>
+                <p style="color: #E30613; font-weight: bold;">Q1 2026</p>
+            </div>
+            <div class="timeline-item">
+                <div class="dot"></div>
+                <h5>Fáze 2: Vyhodnocení</h5>
+                <p>Analýza, optimalizace</p>
+                <p style="color: #E30613; font-weight: bold;">Q2 2026</p>
+            </div>
+            <div class="timeline-item">
+                <div class="dot"></div>
+                <h5>Fáze 3: Rozšíření</h5>
+                <p>Online + prodejny</p>
+                <p style="color: #E30613; font-weight: bold;">Q3 2026</p>
+            </div>
+            <div class="timeline-item">
+                <div class="dot"></div>
+                <h5>Fáze 4: Full scale</h5>
+                <p>Všechny kanály</p>
+                <p style="color: #E30613; font-weight: bold;">Q4 2026</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">10</div>
+    </div>
+</div>
+
+<!-- SLIDE 11: Shrnutí -->
+<div class="slide">
+    <div class="slide-header">
+        <h2>Shrnutí nabídky</h2>
+        <div class="logos">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" class="logo-img">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" class="logo-img">
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="contact-info">
+            <div>
+                <div class="grid-2" style="gap: 12px; margin-bottom: 15px;">
+                    <div class="stat-card highlight">
+                        <div class="number">35 %</div>
+                        <div class="label">Sleva z MOC</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">80+</div>
+                        <div class="label">Produktů</div>
+                    </div>
+                </div>
+                <div class="success-box">
+                    <h4 style="margin-bottom: 8px;">✓ Co získáte spoluprací s ENERVIT:</h4>
+                    <ul style="margin-left: 15px; font-size: 10px;">
+                        <li>Prémiovou italskou značku s globální reputací</li>
+                        <li>Tři specializované produktové řady</li>
+                        <li>35 % slevu z doporučené maloobchodní ceny</li>
+                        <li>Kompletní marketingovou a POS podporu</li>
+                        <li>Školení personálu a ongoing support</li>
+                        <li>Bezrizikovou výměnu zboží před expirací</li>
+                        <li>Dedikovaného account managera</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h3 style="text-align: center; margin-bottom: 10px;">Kontaktujte nás</h3>
+                <div class="contact-card">
+                    <div class="avatar">JG</div>
+                    <div class="name">Juraj Giacko</div>
+                    <div class="role">Business Development</div>
+                    <hr class="divider">
+                    <div class="info">
+                        <p><strong>Tel:</strong> +420 604 319 719</p>
+                        <p><strong>E-mail:</strong> giacko.juraj@vitarsport.cz</p>
+                    </div>
+                    <hr class="divider">
+                    <img src="enervit-logo-color.svg" alt="ENERVIT" style="height: 22px; margin-bottom: 6px;">
+                    <p style="font-size: 9px; color: #666;">VITAR Sport, s.r.o.</p>
+                    <p style="font-size: 8px; color: #888;">Exkluzivní distributor ENERVIT pro ČR a SR</p>
+                </div>
+                <div class="highlight-box" style="margin-top: 10px;">
+                    <strong>Další krok:</strong> Po dohodě vám přiřadíme dedikovaného Key Account Managera.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>www.enervit.cz</span>
+        <span>ENERVIT x DECATHLON CZ</span>
+        <div class="slide-number">11</div>
+    </div>
+</div>
+
+<!-- SLIDE 12: Closing -->
+<div class="slide closing-slide">
+    <img src="enervit-logo-color.svg" alt="ENERVIT" style="height: 50px; background: white; padding: 10px 25px; border-radius: 8px; margin-bottom: 15px;">
+    <div style="font-size: 14px; opacity: 0.9; margin-bottom: 25px;">The Positive Nutrition Company</div>
+    <h1 style="font-size: 28px; margin-bottom: 10px;">Děkujeme za váš čas</h1>
+    <div style="font-size: 13px; opacity: 0.9; max-width: 500px;">
+        Věříme, že ENERVIT bude skvělým doplněním sortimentu DECATHLON a společně oslovíme miliony aktivních sportovců v České republice.
+    </div>
+    <div style="margin-top: 30px; display: flex; gap: 20px; align-items: center;">
+        <div style="background: white; padding: 10px 18px; border-radius: 8px;">
+            <img src="enervit-logo-color.svg" alt="ENERVIT" style="height: 28px;">
+        </div>
+        <span style="font-size: 18px; opacity: 0.6;">×</span>
+        <div style="background: white; padding: 10px 18px; border-radius: 8px;">
+            <img src="Decathlon_-_logo_(France,_2024).svg" alt="DECATHLON" style="height: 28px;">
+        </div>
+    </div>
+    <div style="margin-top: 30px; opacity: 0.7; font-size: 11px;">
+        <p>www.enervit.cz | giacko.juraj@vitarsport.cz | +420 604 319 719</p>
+        <p style="margin-top: 6px;">Juraj Giacko | Business Development</p>
+    </div>
+</div>
+
+</body>
+</html>
