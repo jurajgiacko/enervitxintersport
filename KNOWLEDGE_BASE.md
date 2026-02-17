@@ -62,15 +62,34 @@
 - **Francesco Puppi** (trail running)
 - Obnovené partnerstvo 2026 so Sinnerom i Pogačarom
 
+## PIN ochrana a distribúcia
+
+- Prezentácia je chránená **PIN gate stránkou** (client-side, sessionStorage)
+- PIN pre Intersport: **intersport2026**
+- Doménová stratégia: **[retailer].enervit.online** — každý partner má vlastnú subdoménu (napr. `intersport.enervit.online`, neskôr `decathlon.enervit.online`)
+- Vercel stále deployuje z git repa, doména sa nastavuje cez DNS (enervit.online)
+
+## Komunikácia s retailermi (emaily)
+
+- Juraj píše **slovensky bez diakritiky** — to je štandard, nie čeština!
+- **Žiadne emoji** v obchodných mailoch
+- **Žiadny custom HTML font/styling** — čistý mail, štandardný rendering
+- Oslovovať **krstným menom** (napr. "Dobry den, Lucie")
+- Vyzdvihnúť **podmienky spolupráce** (splatnosť, SLA, doprava, závozy) — nie marketing/brand story
+- Pridať vetu o flexibilite: "Vsetky body vieme spolocne prediskutovat a pripadne upravit podla potreby"
+- V kópii vždy **Key Account Manager** (Karolína)
+- Prvý kontakt Intersport: **Lucie Kuřičová** — `lucie.kuricova@intersport.cz` (stretnutie na JIZ50)
+
 ## Kontakty
 
 - Key Account Manager: **Karolína Calda** — `calda.karolina@vitarsport.cz`, +420 724 963 739
+- Intersport CZ: **Lucie Kuřičová** — `lucie.kuricova@intersport.cz`
 
 ## Technické workflow
 
 - HTML prezentácia: `03_PREZENTACE_INTERSPORT_MANAGEMENT.html`
 - Po každej zmene **syncovať do `index.html`** (Vercel deployuje index.html)
-- Git repo: `github.com/jurajgiacko/enervitxintersport` → Vercel: `enervitxintersport.vercel.app`
+- Git repo: `github.com/jurajgiacko/enervitxintersport` → Vercel: `enervitxintersport.vercel.app` → Custom: `intersport.enervit.online`
 - Pri renumberovaní slidov pracovať **odzadu** (od najvyššieho ID), aby nevznikli duplicity
 - Pri merge conflictoch s Vercelom: `git checkout --ours` pre HTML súbory (lokálne zmeny majú prednosť)
 
@@ -83,4 +102,4 @@
 - **Nekombovať obrázky len z jednej produktovej rady** na visual break slidoch
 
 ---
-Posledná aktualizácia: 2026-02-16
+Posledná aktualizácia: 2026-02-17
