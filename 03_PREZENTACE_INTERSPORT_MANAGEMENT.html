@@ -1306,6 +1306,116 @@
     </style>
 </head>
 <body>
+
+<!-- PIN Gate Overlay -->
+<div id="pin-gate" style="
+    position: fixed; inset: 0; z-index: 99999;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+">
+    <div style="
+        text-align: center; max-width: 400px; width: 90%; padding: 48px 40px;
+        background: rgba(255,255,255,0.05); border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.08);
+        backdrop-filter: blur(20px); box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    ">
+        <!-- Enervit logo -->
+        <div style="
+            display: inline-block; background: #E30613; padding: 12px 28px;
+            margin-bottom: 32px;
+        ">
+            <img src="enervit-logo-white.svg" alt="ENERVIT" style="height: 28px; display: block;">
+        </div>
+
+        <p style="color: rgba(255,255,255,0.5); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;">
+            Obchodní nabídka
+        </p>
+
+        <div style="position: relative; margin-bottom: 16px;">
+            <input id="pin-input" type="password" placeholder="Zadejte přístupový kód"
+                autocomplete="off" autofocus
+                style="
+                    width: 100%; padding: 16px 20px; font-size: 16px;
+                    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+                    border-radius: 10px; color: #fff; text-align: center;
+                    letter-spacing: 2px; outline: none;
+                    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+                "
+                onfocus="this.style.borderColor='rgba(227,6,19,0.6)'; this.style.boxShadow='0 0 20px rgba(227,6,19,0.15)'"
+                onblur="this.style.borderColor='rgba(255,255,255,0.15)'; this.style.boxShadow='none'"
+            >
+        </div>
+
+        <button id="pin-submit" style="
+            width: 100%; padding: 14px; font-size: 15px; font-weight: 600;
+            background: #E30613; color: #fff; border: none; border-radius: 10px;
+            cursor: pointer; letter-spacing: 1px; text-transform: uppercase;
+            transition: background 0.3s ease, transform 0.1s ease;
+        "
+            onmouseover="this.style.background='#c7050f'"
+            onmouseout="this.style.background='#E30613'"
+            onmousedown="this.style.transform='scale(0.98)'"
+            onmouseup="this.style.transform='scale(1)'"
+        >
+            Vstoupit
+        </button>
+
+        <p id="pin-error" style="
+            color: #ff6b6b; font-size: 13px; margin-top: 12px;
+            opacity: 0; transition: opacity 0.3s ease;
+        ">
+            Nesprávný kód. Zkuste to znovu.
+        </p>
+
+        <p style="color: rgba(255,255,255,0.2); font-size: 11px; margin-top: 32px;">
+            VITAR Sport s.r.o. &bull; Důvěrný obsah
+        </p>
+    </div>
+</div>
+
+<script>
+(function() {
+    const CORRECT_PIN = 'intersport2026';
+    const STORAGE_KEY = 'enervit_pin_ok';
+
+    // If already authenticated in this session, skip gate
+    if (sessionStorage.getItem(STORAGE_KEY) === 'true') {
+        document.getElementById('pin-gate').style.display = 'none';
+        return;
+    }
+
+    const gate = document.getElementById('pin-gate');
+    const input = document.getElementById('pin-input');
+    const submit = document.getElementById('pin-submit');
+    const error = document.getElementById('pin-error');
+
+    function tryUnlock() {
+        if (input.value.trim().toLowerCase() === CORRECT_PIN) {
+            sessionStorage.setItem(STORAGE_KEY, 'true');
+            gate.style.opacity = '0';
+            gate.style.visibility = 'hidden';
+            setTimeout(() => gate.remove(), 600);
+        } else {
+            error.style.opacity = '1';
+            input.style.borderColor = '#ff6b6b';
+            input.style.boxShadow = '0 0 20px rgba(255,107,107,0.2)';
+            input.value = '';
+            setTimeout(() => {
+                error.style.opacity = '0';
+                input.style.borderColor = 'rgba(255,255,255,0.15)';
+                input.style.boxShadow = 'none';
+            }, 2500);
+        }
+    }
+
+    submit.addEventListener('click', tryUnlock);
+    input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') tryUnlock();
+    });
+})();
+</script>
+
 <div class="app-wrapper">
 
     <!-- Navigation -->
